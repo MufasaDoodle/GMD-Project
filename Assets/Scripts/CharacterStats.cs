@@ -64,6 +64,15 @@ public class CharacterStats : MonoBehaviour
         private set { agility = value; }
     }
 
+    private int level;
+
+    public int Level
+    {
+        get { return level; }
+        set { level = value; }
+    }
+
+
     #endregion
 
     public delegate void OnStatChange();
@@ -73,13 +82,14 @@ public class CharacterStats : MonoBehaviour
     void Awake()
     {
         //later we load this initial char data from a savefile
+        Level = 1;
         Stamina = 2;
         Strength = 3;
         Agility = 3;
         MaxHealth = Stamina * 10; //every stamina is worth 10 health
         CurrentHealth = MaxHealth;
         CurrentXP = 0;
-        XPToLevel = 400;
+        XPToLevel = FormulaHelper.CalculateXP(Level);
     }
 
     private void Update()
@@ -93,6 +103,11 @@ public class CharacterStats : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             TakeDamage(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            AddXP(10000);
         }
     }
 
@@ -121,11 +136,35 @@ public class CharacterStats : MonoBehaviour
         //Debug.Log(CurrentHealth);
     }
 
+    public void AddXP(int amount)
+    {
+        CurrentXP += amount;
+
+        while(CurrentXP >= XPToLevel)
+        {
+            CurrentXP -= XPToLevel;
+            LevelUp();
+            XPToLevel = FormulaHelper.CalculateXP(Level);
+        }
+
+        //Update UI
+        PublishStats();
+    }
+
+    private void LevelUp()
+    {
+        Level += 1;
+        Stamina += 2;
+        Strength += 3;
+        Agility += 2;
+        MaxHealth = Stamina * 10; //every stamina is worth 10 health
+        CurrentHealth = MaxHealth;
+    }
+
     void PublishStats()
     {
         onStatChange?.Invoke();
     }
-
 
     private void Death()
     {

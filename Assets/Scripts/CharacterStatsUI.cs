@@ -6,6 +6,7 @@ using TMPro;
 
 public class CharacterStatsUI : MonoBehaviour
 {
+    public TextMeshProUGUI levelUI;
     public TextMeshProUGUI healthUI;
     public TextMeshProUGUI xpUI;
     public TextMeshProUGUI strengthUI;
@@ -25,6 +26,7 @@ public class CharacterStatsUI : MonoBehaviour
     void UpdateUI()
     {
         CharacterStats stats = PlayerManager.Instance.PlayerStats;
+        levelUI.text = $"Level: {stats.Level}";
         healthUI.text = $"Health: {stats.CurrentHealth}/{stats.MaxHealth}";
         xpUI.text = $"XP: {stats.CurrentXP}/{stats.XPToLevel}";
         strengthUI.text = $"Strength: {stats.Strength}";
