@@ -1,0 +1,134 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CharacterStats : MonoBehaviour
+{
+
+    #region Properties
+
+    private int currentHealth;
+
+    public int CurrentHealth
+    {
+        get { return currentHealth; }
+        private set { currentHealth = value; }
+    }
+
+    private int maxHealth;
+
+    public int MaxHealth
+    {
+        get { return maxHealth; }
+        private set { maxHealth = value; }
+    }
+
+    private int currentXP;
+
+    public int CurrentXP
+    {
+        get { return currentXP; }
+        private set { currentXP = value; }
+    }
+
+    private int xpToLevel;
+
+    public int XPToLevel
+    {
+        get { return xpToLevel; }
+        private set { xpToLevel = value; }
+    }
+
+    private int stamina;
+
+    public int Stamina
+    {
+        get { return stamina; }
+        private set { stamina = value; }
+    }
+
+    private int strength;
+
+    public int Strength
+    {
+        get { return strength; }
+        private set { strength = value; }
+    }
+
+    private int agility;
+
+    public int Agility
+    {
+        get { return agility; }
+        private set { agility = value; }
+    }
+
+    #endregion
+
+    public delegate void OnStatChange();
+    public OnStatChange onStatChange;
+
+    // Start is called before the first frame update
+    void Awake()
+    {
+        //later we load this initial char data from a savefile
+        Stamina = 2;
+        Strength = 3;
+        Agility = 3;
+        MaxHealth = Stamina * 10; //every stamina is worth 10 health
+        CurrentHealth = MaxHealth;
+        CurrentXP = 0;
+        XPToLevel = 400;
+    }
+
+    private void Update()
+    {
+        //For debugging
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            HealHealth(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            TakeDamage(1);
+        }
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        CurrentHealth -= damageAmount;
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth); //ensures health cannot go below zero;
+        //Update UI
+        PublishStats();
+
+        //Debug.Log(CurrentHealth);
+
+        if (CurrentHealth == 0)
+        {
+            Death();
+        }
+    }
+
+    public void HealHealth(int healAmount)
+    {
+        CurrentHealth += healAmount;
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth); //ensures health cannot go above maxHealth
+        //Update UI
+        PublishStats();
+
+        //Debug.Log(CurrentHealth);
+    }
+
+    void PublishStats()
+    {
+        onStatChange?.Invoke();
+    }
+
+
+    private void Death()
+    {
+        throw new NotImplementedException();
+    }
+}
