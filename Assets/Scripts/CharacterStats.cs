@@ -129,6 +129,6 @@ public class CharacterStats : MonoBehaviour
 
     private void Death()
     {
-        throw new NotImplementedException();
+        Debug.Log("Dead");
     }
 }
