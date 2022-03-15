@@ -13,12 +13,12 @@ public class CharacterStatsUI : MonoBehaviour
     public TextMeshProUGUI staminaUI;
     public TextMeshProUGUI agilityUI;
 
-    private void OnEnable()
+    private void Start()
     {
-        SubscribeToEvents();
+        StartCoroutine(Init());
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         UnsubscribeToEvents();
     }
@@ -38,6 +38,16 @@ public class CharacterStatsUI : MonoBehaviour
     {
         PlayerManager.Instance.PlayerStats.onStatChange += UpdateUI;
         UpdateUI();
+    }
+
+    IEnumerator Init()
+    {
+        new WaitForSeconds(0.1f);
+
+        UpdateUI();
+        SubscribeToEvents();
+
+        yield return null;
     }
 
     void UnsubscribeToEvents()

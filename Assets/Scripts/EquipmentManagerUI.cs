@@ -19,13 +19,7 @@ public class EquipmentManagerUI : MonoBehaviour
         StartCoroutine(Init());
     }
 
-    private void OnEnable()
-    {
-        if (isInitialized)
-            SubscribeToEvents();
-    }
-
-    private void OnDisable()
+    private void OnDestroy()
     {
         if (isInitialized)
             UnsubscribeToEvents();
@@ -40,7 +34,8 @@ public class EquipmentManagerUI : MonoBehaviour
             return;
         }
 
-        slots[index].SetImageSprite(Resources.Load<Sprite>(equipment.imagePath));
+        slots[index].SetImageSprite(Resources.Load<Sprite>(equipment.ImagePath));
+        slots[index].equipmentID = equipment.ID;
     }
 
     private void UpdateRemovedEquipment(Equipment equipment)
@@ -53,6 +48,7 @@ public class EquipmentManagerUI : MonoBehaviour
         }
 
         slots[index].SetImageSprite(unequippedSprite);
+        slots[index].equipmentID = -1;
     }
     void SubscribeToEvents()
     {
@@ -71,6 +67,7 @@ public class EquipmentManagerUI : MonoBehaviour
         new WaitForSeconds(0.1f);
 
         RefreshUI();
+        SubscribeToEvents();
 
         yield return null;
     }
@@ -87,12 +84,14 @@ public class EquipmentManagerUI : MonoBehaviour
                 Debug.Log($"slots type: {slots[i].equipmentType}, eqslot type: {eqSlots[i].equipmentType}");
                 Debug.Log("Setting image for slot " + slots[i].name + " to default");
                 slots[i].SetImageSprite(unequippedSprite);
+                slots[i].equipmentID = -1;
             }
             else
             {
                 Debug.Log($"slots type: {slots[i].equipmentType}, eqslot type: {eqSlots[i].equipmentType}");
                 Debug.Log("Setting image for slot " + slots[i].name + " item sprite");
-                slots[i].SetImageSprite(Resources.Load<Sprite>(eqSlots[i].equipment.imagePath));
+                slots[i].SetImageSprite(Resources.Load<Sprite>(eqSlots[i].equipment.ImagePath));
+                slots[i].equipmentID = eqSlots[i].equipment.ID;
             }
 
         }

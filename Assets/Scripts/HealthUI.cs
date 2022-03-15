@@ -21,16 +21,11 @@ public class HealthUI : MonoBehaviour
     void UpdateHealth(int current, int max)
     {
         healthText.text = $"{current}/{max}";
-        healthSlider.value = current;
         healthSlider.maxValue = max;
-    }
-    private void OnEnable()
-    {
-        if(isInitialized)
-            SubscribeToEvents();
+        healthSlider.value = current;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         UnsubscribeToEvents();
     }

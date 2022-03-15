@@ -42,29 +42,35 @@ public class PlayerEquipment : MonoBehaviour
     {
         //for debugging
         Equipment weapon = new Equipment();
-        weapon.EquipmentName = "Used Sword";
-        weapon.EquipmentRarity = EquipmentRarity.Common;
+        weapon.ItemName = "Used Sword";
+        weapon.ItemRarity = ItemRarity.Common;
         weapon.EquipmentType = EquipmentType.Weapon;
         weapon.LevelRequirement = 1;
+        weapon.ID = 1;
+        weapon.ItemType = ItemType.Weapon;
         weapon.AddStat(new EquipmentStat { statType = StatType.Stamina, statValue = 1 });
         EquipItem(weapon);
 
         Equipment ring1 = new Equipment
         {
-            EquipmentName = "ring 1",
-            EquipmentRarity = EquipmentRarity.Common,
+            ItemName = "ring 1",
+            ItemRarity = ItemRarity.Common,
             EquipmentType = EquipmentType.Ring,
-            LevelRequirement = 1
+            LevelRequirement = 1,
+            ID = 2,
+            ItemType = ItemType.Accessory
         };
         ring1.AddStat(new EquipmentStat { statType = StatType.Strength, statValue = 2 });
         EquipItem(ring1);
 
         Equipment earring = new Equipment
         {
-            EquipmentName = "Earring",
-            EquipmentRarity = EquipmentRarity.Common,
+            ItemName = "Earring",
+            ItemRarity = ItemRarity.Common,
             EquipmentType = EquipmentType.Earring,
-            LevelRequirement = 1
+            LevelRequirement = 1,
+            ID = 3,
+            ItemType = ItemType.Accessory
         };
         earring.AddStat(new EquipmentStat { statType = StatType.Stamina, statValue = 2 });
         EquipItem(earring);
@@ -98,7 +104,7 @@ public class PlayerEquipment : MonoBehaviour
                 equipmentSlot.equipment = equipment;
 
                 //TODO update equipment UI with this info
-                Debug.Log($"Equipped {equipment.EquipmentName}");
+                Debug.Log($"Equipped {equipment.ItemName}");
                 onEquipmentAdded?.Invoke(equipment);
                 return;
             }
@@ -109,6 +115,7 @@ public class PlayerEquipment : MonoBehaviour
 
     public void UnequipItem(EquipmentType equipmentType)
     {
+        //TODO allow unequipping of item with an ID
         foreach (var equipmentSlot in equipmentSlots)
         {
             if (equipmentSlot.equipmentType == equipmentType)

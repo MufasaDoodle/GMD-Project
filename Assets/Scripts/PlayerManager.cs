@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
 
     public CharacterStats PlayerStats;
     public PlayerEquipment PlayerEquipment;
+    public PlayerInventory PlayerInventory;
 
     // Start is called before the first frame update
     void Awake()

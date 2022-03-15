@@ -1,13 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EquipmentUISlot : MonoBehaviour
+public class InventorySlotUI : MonoBehaviour
 {
-    public EquipmentType equipmentType;
-    public int equipmentID;
+    public int itemID;
 
     public void SetImageSprite(Sprite sprite)
     {
