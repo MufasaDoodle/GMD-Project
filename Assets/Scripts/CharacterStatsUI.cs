@@ -29,9 +29,9 @@ public class CharacterStatsUI : MonoBehaviour
         levelUI.text = $"Level: {stats.Level}";
         healthUI.text = $"Health: {stats.CurrentHealth}/{stats.MaxHealth}";
         xpUI.text = $"XP: {stats.CurrentXP}/{stats.XPToLevel}";
-        strengthUI.text = $"Strength: {stats.Strength}";
-        staminaUI.text = $"Stamina: {stats.Stamina}";
-        agilityUI.text = $"Agility: {stats.Agility}";
+        strengthUI.text = $"Strength: {stats.Strength.Value}";
+        staminaUI.text = $"Stamina: {stats.Stamina.Value}";
+        agilityUI.text = $"Agility: {stats.Agility.Value}";
     }
 
     void SubscribeToEvents()

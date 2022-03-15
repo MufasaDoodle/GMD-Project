@@ -40,25 +40,25 @@ public class CharacterStats : MonoBehaviour
         private set { xpToLevel = value; }
     }
 
-    private int stamina;
+    private Stat stamina;
 
-    public int Stamina
+    public Stat Stamina
     {
         get { return stamina; }
         private set { stamina = value; }
     }
 
-    private int strength;
+    private Stat strength;
 
-    public int Strength
+    public Stat Strength
     {
         get { return strength; }
         private set { strength = value; }
     }
 
-    private int agility;
+    private Stat agility;
 
-    public int Agility
+    public Stat Agility
     {
         get { return agility; }
         private set { agility = value; }
@@ -78,18 +78,27 @@ public class CharacterStats : MonoBehaviour
     public delegate void OnStatChange();
     public OnStatChange onStatChange;
 
+    public delegate void OnHealthChange(int current, int max);
+    public OnHealthChange onHealthChange;
+
     // Start is called before the first frame update
     void Awake()
     {
+        Stamina = new Stat();
+        Strength = new Stat();
+        Agility = new Stat();
+
         //later we load this initial char data from a savefile
         Level = 1;
-        Stamina = 2;
-        Strength = 3;
-        Agility = 3;
-        MaxHealth = Stamina * 10; //every stamina is worth 10 health
+        Stamina.rawValue = 2;
+        Strength.rawValue = 3;
+        Agility.rawValue = 3;
+        MaxHealth = Stamina.Value * 10; //every stamina is worth 10 health
         CurrentHealth = MaxHealth;
         CurrentXP = 0;
         XPToLevel = FormulaHelper.CalculateXP(Level);
+        GetComponent<PlayerEquipment>().onEquipmentAdded += EquipmentAdded;
+        GetComponent<PlayerEquipment>().onEquipmentRemoved += EquipmentRemoved;
     }
 
     private void Update()
@@ -116,7 +125,7 @@ public class CharacterStats : MonoBehaviour
         CurrentHealth -= damageAmount;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth); //ensures health cannot go below zero;
         //Update UI
-        PublishStats();
+        HealthChanged();
 
         //Debug.Log(CurrentHealth);
 
@@ -131,7 +140,7 @@ public class CharacterStats : MonoBehaviour
         CurrentHealth += healAmount;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth); //ensures health cannot go above maxHealth
         //Update UI
-        PublishStats();
+        HealthChanged();
 
         //Debug.Log(CurrentHealth);
     }
@@ -148,22 +157,91 @@ public class CharacterStats : MonoBehaviour
         }
 
         //Update UI
+        HealthChanged();
         PublishStats();
     }
 
     private void LevelUp()
     {
         Level += 1;
-        Stamina += 2;
-        Strength += 3;
-        Agility += 2;
-        MaxHealth = Stamina * 10; //every stamina is worth 10 health
+        Stamina.rawValue += 2;
+        Strength.rawValue += 3;
+        Agility.rawValue += 2;
+        MaxHealth = Stamina.Value * 10; //every stamina is worth 10 health
         CurrentHealth = MaxHealth;
     }
 
     void PublishStats()
     {
         onStatChange?.Invoke();
+    }
+
+    void HealthChanged()
+    {
+        onHealthChange?.Invoke(CurrentHealth, MaxHealth);
+    }
+
+    void EquipmentAdded(Equipment equipment)
+    {
+        foreach (var eqStat in equipment.equipmentStats)
+        {
+            if(eqStat.statType == StatType.Stamina)
+            {
+                Stamina.modifiers.Add(eqStat.statValue);
+                RecalculateHealth();
+            }
+            else if(eqStat.statType == StatType.Strength)
+            {
+                Strength.modifiers.Add(eqStat.statValue);
+            }
+            else if(eqStat.statType == StatType.Agility)
+            {
+                Agility.modifiers.Add(eqStat.statValue);
+            }
+            else
+            {
+                Debug.LogError("Stat type not defined in player character");
+            }
+
+            //TODO recalculateStats();
+            HealthChanged();
+            PublishStats();
+        }
+        Debug.Log("Equipment change registered");
+    }
+
+    void EquipmentRemoved(Equipment equipment)
+    {
+        foreach (var eqStat in equipment.equipmentStats)
+        {
+            if (eqStat.statType == StatType.Stamina)
+            {
+                Stamina.modifiers.Remove(eqStat.statValue);
+                RecalculateHealth();
+            }
+            else if (eqStat.statType == StatType.Strength)
+            {
+                Strength.modifiers.Remove(eqStat.statValue);
+            }
+            else if (eqStat.statType == StatType.Agility)
+            {
+                Agility.modifiers.Remove(eqStat.statValue);
+            }
+            else
+            {
+                Debug.LogError("Stat type not defined in player character");
+            }
+
+            //TODO recalculateStats(); //for other stats not yet implemented, like crit, armor
+            HealthChanged();
+            PublishStats();
+        }
+        Debug.Log("Equipment change registered");
+    }
+
+    void RecalculateHealth()
+    {
+        MaxHealth = Stamina.Value * 10;
     }
 
     private void Death()

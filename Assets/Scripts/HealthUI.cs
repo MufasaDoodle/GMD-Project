@@ -18,11 +18,11 @@ public class HealthUI : MonoBehaviour
         StartCoroutine(InitSlider());
     }
 
-    void UpdateHealth()
+    void UpdateHealth(int current, int max)
     {
-        CharacterStats stats = PlayerManager.Instance.PlayerStats;
-        healthText.text = $"{stats.CurrentHealth}/{stats.MaxHealth}";
-        healthSlider.value = stats.CurrentHealth;
+        healthText.text = $"{current}/{max}";
+        healthSlider.value = current;
+        healthSlider.maxValue = max;
     }
     private void OnEnable()
     {
@@ -37,13 +37,16 @@ public class HealthUI : MonoBehaviour
 
     void SubscribeToEvents()
     {
-        PlayerManager.Instance.PlayerStats.onStatChange += UpdateHealth;
-        UpdateHealth();
+        PlayerManager.Instance.PlayerStats.onHealthChange += UpdateHealth;
+
+        //need an additional manual check because of the execution order
+        CharacterStats stats = PlayerManager.Instance.PlayerStats;
+        UpdateHealth(stats.CurrentHealth, stats.MaxHealth);
     }
 
     void UnsubscribeToEvents()
     {
-        PlayerManager.Instance.PlayerStats.onStatChange -= UpdateHealth;
+        PlayerManager.Instance.PlayerStats.onHealthChange -= UpdateHealth;
     }
     private IEnumerator InitSlider()
     {
