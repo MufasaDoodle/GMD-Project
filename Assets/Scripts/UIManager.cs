@@ -27,11 +27,20 @@ public class UIManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.U))
         {
+            if (equipmentPanel.activeSelf)
+            {
+                Tooltip.Instance.gameObject.SetActive(false);
+            }
             equipmentPanel.SetActive(!equipmentPanel.activeSelf);
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
+            if (inventoryPanel.activeSelf)
+            {
+                Tooltip.Instance.gameObject.SetActive(false);
+            }
             inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+            Tooltip.Instance.gameObject.SetActive(false);
         }
     }
 }

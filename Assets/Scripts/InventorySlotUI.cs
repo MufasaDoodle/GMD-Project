@@ -1,25 +1,22 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class EquipmentUISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class InventorySlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public EquipmentType equipmentType;
-    public int equipmentID;
+    public int itemID;
 
     public void SetImageSprite(Sprite sprite)
     {
         GetComponent<Image>().sprite = sprite;
     }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (equipmentID == -1) return;
+        if (itemID == -1) return;
 
-        Tooltip.Instance.DisplayItemTooltip(ItemDatabase.Instance.GetItemByID(equipmentID));
+        Tooltip.Instance.DisplayItemTooltip(ItemDatabase.Instance.GetItemByID(itemID));
     }
 
     public void OnPointerExit(PointerEventData eventData)

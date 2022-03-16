@@ -16,7 +16,6 @@ public class InventoryManagerUI : MonoBehaviour
     void Start()
     {
         int inventorySlotAmount = innerInventoryPanel.GetComponentsInChildren<InventorySlotUI>().Length;
-        Debug.Log(inventorySlotAmount);
         inventorySlots = new InventorySlotUI[inventorySlotAmount];
 
         for (int i = 0; i < inventorySlotAmount; i++)
@@ -60,13 +59,13 @@ public class InventoryManagerUI : MonoBehaviour
         {
             if (invSlots[i].item == null)
             {
-                Debug.Log("Setting image for slot " + inventorySlots[i].name + " to default");
+                //Debug.Log("Setting image for slot " + inventorySlots[i].name + " to default");
                 inventorySlots[i].SetImageSprite(emptySlotSprite);
                 inventorySlots[i].itemID = -1;
             }
             else
             {
-                Debug.Log("Setting image for slot " + inventorySlots[i].name + " item sprite");
+                //Debug.Log("Setting image for slot " + inventorySlots[i].name + " item sprite");
                 inventorySlots[i].SetImageSprite(Resources.Load<Sprite>(invSlots[i].item.ImagePath));
                 inventorySlots[i].itemID = invSlots[i].item.ID;
             }

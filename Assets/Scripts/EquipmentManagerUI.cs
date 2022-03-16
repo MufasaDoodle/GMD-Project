@@ -81,15 +81,15 @@ public class EquipmentManagerUI : MonoBehaviour
         {
             if (eqSlots[i].equipment == null)
             {
-                Debug.Log($"slots type: {slots[i].equipmentType}, eqslot type: {eqSlots[i].equipmentType}");
-                Debug.Log("Setting image for slot " + slots[i].name + " to default");
+                //Debug.Log($"slots type: {slots[i].equipmentType}, eqslot type: {eqSlots[i].equipmentType}");
+                //Debug.Log("Setting image for slot " + slots[i].name + " to default");
                 slots[i].SetImageSprite(unequippedSprite);
                 slots[i].equipmentID = -1;
             }
             else
             {
-                Debug.Log($"slots type: {slots[i].equipmentType}, eqslot type: {eqSlots[i].equipmentType}");
-                Debug.Log("Setting image for slot " + slots[i].name + " item sprite");
+                //Debug.Log($"slots type: {slots[i].equipmentType}, eqslot type: {eqSlots[i].equipmentType}");
+                //Debug.Log("Setting image for slot " + slots[i].name + " item sprite");
                 slots[i].SetImageSprite(Resources.Load<Sprite>(eqSlots[i].equipment.ImagePath));
                 slots[i].equipmentID = eqSlots[i].equipment.ID;
             }

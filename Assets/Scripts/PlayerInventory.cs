@@ -28,10 +28,8 @@ public class PlayerInventory : MonoBehaviour
 
     private void Start()
     {
-        Trash ruinedPelt = new Trash { ID = 5, ItemName = "Ruined Pelt", ItemRarity = ItemRarity.Common, ItemType = ItemType.Trash, MarketPrice = 0, SellPrice = 1 };
-        Trash brokenTusk = new Trash { ID = 6, ItemName = "Broken Tusk", ItemRarity = ItemRarity.Common, ItemType = ItemType.Trash, MarketPrice = 0, SellPrice = 1 };
-        AddItemToInventory(ruinedPelt);
-        AddItemToInventory(brokenTusk);
+        AddItemToInventory(ItemDatabase.Instance.GetItemByID(4));
+        AddItemToInventory(ItemDatabase.Instance.GetItemByID(5));
     }
 
     /// <summary>

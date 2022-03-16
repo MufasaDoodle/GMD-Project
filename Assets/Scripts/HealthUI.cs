@@ -10,7 +10,6 @@ public class HealthUI : MonoBehaviour
     public Slider healthSlider;
     public TextMeshProUGUI healthText;
 
-    bool isInitialized = false;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +50,6 @@ public class HealthUI : MonoBehaviour
         healthSlider.maxValue = PlayerManager.Instance.PlayerStats.MaxHealth;
         healthSlider.value = PlayerManager.Instance.PlayerStats.CurrentHealth;
         SubscribeToEvents();
-        isInitialized = true;
         yield return null;
     }
 

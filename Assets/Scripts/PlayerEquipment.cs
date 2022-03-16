@@ -40,40 +40,10 @@ public class PlayerEquipment : MonoBehaviour
 
     private void Start()
     {
-        //for debugging
-        Equipment weapon = new Equipment();
-        weapon.ItemName = "Used Sword";
-        weapon.ItemRarity = ItemRarity.Common;
-        weapon.EquipmentType = EquipmentType.Weapon;
-        weapon.LevelRequirement = 1;
-        weapon.ID = 1;
-        weapon.ItemType = ItemType.Weapon;
-        weapon.AddStat(new EquipmentStat { statType = StatType.Stamina, statValue = 1 });
-        EquipItem(weapon);
-
-        Equipment ring1 = new Equipment
-        {
-            ItemName = "ring 1",
-            ItemRarity = ItemRarity.Common,
-            EquipmentType = EquipmentType.Ring,
-            LevelRequirement = 1,
-            ID = 2,
-            ItemType = ItemType.Accessory
-        };
-        ring1.AddStat(new EquipmentStat { statType = StatType.Strength, statValue = 2 });
-        EquipItem(ring1);
-
-        Equipment earring = new Equipment
-        {
-            ItemName = "Earring",
-            ItemRarity = ItemRarity.Common,
-            EquipmentType = EquipmentType.Earring,
-            LevelRequirement = 1,
-            ID = 3,
-            ItemType = ItemType.Accessory
-        };
-        earring.AddStat(new EquipmentStat { statType = StatType.Stamina, statValue = 2 });
-        EquipItem(earring);
+        //for debugging        
+        EquipItem(ItemDatabase.Instance.GetItemByID(1) as Equipment);
+        EquipItem(ItemDatabase.Instance.GetItemByID(2) as Equipment);
+        EquipItem(ItemDatabase.Instance.GetItemByID(3) as Equipment);
     }
 
     public Equipment GetEquipmentAtType(EquipmentType equipmentType)
@@ -91,6 +61,7 @@ public class PlayerEquipment : MonoBehaviour
 
     public void EquipItem(Equipment equipment)
     {
+
         foreach (var equipmentSlot in equipmentSlots)
         {
             if (equipmentSlot.equipmentType == equipment.EquipmentType)

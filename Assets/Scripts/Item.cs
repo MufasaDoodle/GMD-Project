@@ -6,6 +6,12 @@ public abstract class Item
     #region Properties
 
     private int id;
+    private ItemRarity itemRarity;
+    private ItemType itemType;
+    private string itemName;
+    private int sellPrice;
+    private int marketPrice;
+    private string imagePath = "Item Art/Equipment/Placeholder";
 
     public int ID
     {
@@ -13,16 +19,11 @@ public abstract class Item
         set { id = value; }
     }
 
-
-    private ItemRarity itemRarity;
-
     public ItemRarity ItemRarity
     {
         get { return itemRarity; }
         set { itemRarity = value; }
     }
-
-    private ItemType itemType;
 
     public ItemType ItemType
     {
@@ -30,15 +31,11 @@ public abstract class Item
         set { itemType = value; }
     }
 
-    private string itemName;
-
     public string ItemName
     {
         get { return itemName; }
         set { itemName = value; }
     }
-
-    private int sellPrice;
 
     public int SellPrice
     {
@@ -46,15 +43,11 @@ public abstract class Item
         set { sellPrice = value; }
     }
 
-    private int marketPrice;
-
     public int MarketPrice
     {
         get { return marketPrice; }
         set { marketPrice = value; }
     }
-
-    private string imagePath = "Item Art/Equipment/Placeholder";
 
     public string ImagePath
     {
@@ -66,5 +59,5 @@ public abstract class Item
     #endregion
 }
 
-public enum ItemType { Trash, Armor, Weapon, Accessory, CraftingMaterial, Consumable }
+public enum ItemType { Trash, Equipment, CraftingMaterial, Consumable }
 public enum ItemRarity { Common, Uncommon, Rare, Epic, Legendary }
