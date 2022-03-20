@@ -1,14 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Equipment : Item
 {
 
     #region Properties
 
+    [SerializeField]
     private EquipmentType equipmentType;
 
+    [SerializeField]
     private int levelRequirement;
 
     public int LevelRequirement

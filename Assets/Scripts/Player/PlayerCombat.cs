@@ -10,6 +10,8 @@ public class PlayerCombat : MonoBehaviour
 
     public AudioClip[] swingClips;
 
+    public AudioClip takeDamageClip;
+
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +22,15 @@ public class PlayerCombat : MonoBehaviour
         {
             Attack();
             swingCooldown = 1.5f;
+        }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        if(amount >= 0)
+        {
+            GetComponent<AudioSource>().PlayOneShot(takeDamageClip);
+            GetComponent<CharacterStats>().TakeDamage(amount);
         }
     }
 
@@ -38,10 +49,5 @@ public class PlayerCombat : MonoBehaviour
     {
         int random = Random.Range(0, swingClips.Length-1);
         GetComponent<AudioSource>().PlayOneShot(swingClips[random]);
-    }
-
-    void SetAnimationRotation()
-    {
-
     }
 }

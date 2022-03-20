@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,8 +47,18 @@ public class ItemDatabase : MonoBehaviour
     {
         Instance = this;
         items = new List<Item>();
+        GetItemsFromDatabase();
+        //CreateAndAddTestItems();
+        //string itemDB = JsonConvert.SerializeObject(Items, Formatting.Indented);
+        //System.IO.File.WriteAllText(Application.persistentDataPath + "/ItemDatabase.json", itemDB);
+    }
 
-        CreateAndAddTestItems();
+    void GetItemsFromDatabase()
+    {
+        var settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+        //settings.Converters.Add(new ItemConverter());
+        string jsonString = System.IO.File.ReadAllText(Application.persistentDataPath + "/ItemDatabase.json");
+        Items = JsonConvert.DeserializeObject<List<Item>>(jsonString, settings);
     }
 
     void CreateAndAddTestItems()

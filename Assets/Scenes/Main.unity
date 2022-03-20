@@ -485,9 +485,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
+  attackDamage: 1
+  attackCooldown: 2
   visionRadius: 4
   resetRadius: 6
+  attackRadius: 0.7
   state: 0
+  runSpeed: 3.5
+  walkSpeed: 1
+  resetSpeed: 6
+  onHitSound: {fileID: 8300000, guid: c0bcb12d885092e449bf86374314398e, type: 3}
+  currentAttackCooldown: 0
 --- !u!58 &64415867
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3187,7 +3195,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
@@ -3964,9 +3972,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
+  attackDamage: 1
+  attackCooldown: 2
   visionRadius: 4
   resetRadius: 6
+  attackRadius: 0.7
   state: 0
+  runSpeed: 3.5
+  walkSpeed: 1
+  resetSpeed: 6
+  onHitSound: {fileID: 8300000, guid: c0bcb12d885092e449bf86374314398e, type: 3}
+  currentAttackCooldown: 0
 --- !u!50 &738399991
 Rigidbody2D:
   serializedVersion: 4
@@ -4002,7 +4018,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1.5
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -4403,9 +4419,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
+  attackDamage: 1
+  attackCooldown: 2
   visionRadius: 4
   resetRadius: 6
+  attackRadius: 0.7
   state: 0
+  runSpeed: 3.5
+  walkSpeed: 1
+  resetSpeed: 6
+  onHitSound: {fileID: 8300000, guid: c0bcb12d885092e449bf86374314398e, type: 3}
+  currentAttackCooldown: 0
 --- !u!58 &867776136
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5394,9 +5418,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
+  attackDamage: 1
+  attackCooldown: 2
   visionRadius: 4
   resetRadius: 6
+  attackRadius: 0.7
   state: 0
+  runSpeed: 3.5
+  walkSpeed: 1
+  resetSpeed: 6
+  onHitSound: {fileID: 8300000, guid: c0bcb12d885092e449bf86374314398e, type: 3}
+  currentAttackCooldown: 0
 --- !u!58 &1056625999
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7762,7 +7794,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1394865505
 GameObject:
@@ -8429,9 +8461,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
+  attackDamage: 1
+  attackCooldown: 2
   visionRadius: 4
   resetRadius: 6
+  attackRadius: 0.7
   state: 0
+  runSpeed: 3.5
+  walkSpeed: 1
+  resetSpeed: 6
+  onHitSound: {fileID: 8300000, guid: c0bcb12d885092e449bf86374314398e, type: 3}
+  currentAttackCooldown: 0
 --- !u!58 &1427858324
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8981,7 +9021,7 @@ Transform:
   - {fileID: 1394865506}
   - {fileID: 317772413}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1516712362
 CircleCollider2D:
@@ -9053,6 +9093,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fe0ab39297b2f3849aa526186afdebf8, type: 3}
   - {fileID: 8300000, guid: d4c0f085e9c9b004a80c25792cf82635, type: 3}
   - {fileID: 8300000, guid: a82a883f3ec83e549b77a75d6c2dd08b, type: 3}
+  takeDamageClip: {fileID: 8300000, guid: e045afc5df128fc41b86e3750e0d839d, type: 3}
 --- !u!82 &1516712367
 AudioSource:
   m_ObjectHideFlags: 0
@@ -48671,7 +48712,7 @@ RectTransform:
   - {fileID: 1647579558}
   - {fileID: 1056734192}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -49238,7 +49279,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1987856310
 MonoBehaviour:
@@ -49479,5 +49520,5 @@ Transform:
   - {fileID: 1618872493}
   - {fileID: 1356087846}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
