@@ -25,12 +25,22 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, float knockbackPower, Transform hitDir)
     {
         if(amount >= 0)
         {
             GetComponent<AudioSource>().PlayOneShot(takeDamageClip);
             GetComponent<CharacterStats>().TakeDamage(amount);
+
+            float timer = 0;
+
+            //apply knockback
+            while (1f > timer)
+            {
+                timer += Time.deltaTime;
+                Vector2 direction = (hitDir.position - transform.position).normalized;
+                GetComponent<Rigidbody2D>().AddForce(-direction * knockbackPower);
+            }
         }
     }
 

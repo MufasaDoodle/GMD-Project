@@ -81,6 +81,8 @@ public class CharacterStats : MonoBehaviour
     public delegate void OnHealthChange(int current, int max);
     public OnHealthChange onHealthChange;
 
+    private float healthRegenTimer = 3f;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -103,6 +105,18 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
+        if(currentHealth != maxHealth)
+        {
+            healthRegenTimer -= Time.deltaTime;
+            healthRegenTimer = Mathf.Clamp(healthRegenTimer, 0f, 3f); //ensure timer doesn't go below zero
+
+            if(healthRegenTimer == 0f)
+            {
+                HealHealth(maxHealth / 12);
+                healthRegenTimer = 3f;
+            }
+        }
+
         //For debugging
         if (Input.GetKeyDown(KeyCode.H))
         {
@@ -141,6 +155,11 @@ public class CharacterStats : MonoBehaviour
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth); //ensures health cannot go above maxHealth
         //Update UI
         HealthChanged();
+
+        if(currentHealth == maxHealth)
+        {
+            healthRegenTimer = 3f;
+        }
 
         //Debug.Log(CurrentHealth);
     }

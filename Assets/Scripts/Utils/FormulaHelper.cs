@@ -25,4 +25,9 @@ public static class FormulaHelper
         return diffMod;
     }
 
+    public static int CalculateRewardXP(int level, float multiplier)
+    {
+        float baseAmount = (level * 5) + 45;
+        return (int)(baseAmount * multiplier);
+    }
 }

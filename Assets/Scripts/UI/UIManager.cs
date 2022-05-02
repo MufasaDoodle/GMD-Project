@@ -6,14 +6,12 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    public GameObject characterStatsPanel;
     public GameObject equipmentPanel;
     public GameObject inventoryPanel;
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
-        characterStatsPanel.SetActive(false);
         equipmentPanel.SetActive(false);
         inventoryPanel.SetActive(false);
     }
@@ -22,10 +20,6 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
-        {
-            characterStatsPanel.SetActive(!characterStatsPanel.activeSelf);
-        }
-        if (Input.GetKeyDown(KeyCode.U))
         {
             if (equipmentPanel.activeSelf)
             {

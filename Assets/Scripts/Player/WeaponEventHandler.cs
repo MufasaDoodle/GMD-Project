@@ -5,13 +5,10 @@ using UnityEngine;
 
 public class WeaponEventHandler : MonoBehaviour
 {
-
     public void SetAttackingBool(int state)
     {
         GetComponentInParent<Animator>().SetBool("isAttacking", Convert.ToBoolean(state));
     }
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +18,6 @@ public class WeaponEventHandler : MonoBehaviour
         }
 
         //collision.attachedRigidbody.AddRelativeForce(new Vector2(0, -200));
-        collision.GetComponent<EnemyController>().TakeDamage(GetComponentInParent<CharacterStats>().Strength.Value, 20, GetComponentInParent<Transform>());
+        collision.GetComponent<EnemyCombat>().TakeDamage(GetComponentInParent<CharacterStats>().Strength.Value, 20, GetComponentInParent<Transform>());
     }
 }
