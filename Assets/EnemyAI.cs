@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
 
     private Transform target;
     private Vector3 currentDestination;
-    NavMeshAgent navAgent;
+    public NavMeshAgent navAgent;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +43,15 @@ public class EnemyAI : MonoBehaviour
         }
 
         float distanceToTarget = Vector3.Distance(target.position, transform.position);
+
+        if(distanceToTarget <= resetRadius)
+        {
+            GetComponent<EnemyStats>().EnableHealthBar();
+        }
+        else
+        {
+            GetComponent<EnemyStats>().DisableHealthBar();
+        }
 
         if (distanceToTarget <= attackRadius && GetComponent<EnemyCombat>().currentAttackCooldown == 0)
         {
@@ -76,6 +85,7 @@ public class EnemyAI : MonoBehaviour
         navAgent.speed = resetSpeed;
         state = EnemyAIState.Resetting;
         currentDestination = startingPos;
+        GetComponent<EnemyStats>().ResetHealth();
         ResetPosition();
     }
 

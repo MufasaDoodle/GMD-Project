@@ -226,7 +226,6 @@ public class CharacterStats : MonoBehaviour
             HealthChanged();
             PublishStats();
         }
-        Debug.Log("Equipment change registered");
     }
 
     void EquipmentRemoved(Equipment equipment)

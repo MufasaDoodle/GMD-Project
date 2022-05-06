@@ -11,6 +11,8 @@ public class MovementController : MonoBehaviour
     Vector2 movement;
     public Animator animator;
 
+    public bool movementBlocked = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,8 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (movementBlocked == true) return;
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 

@@ -34,13 +34,16 @@ public class PlayerCombat : MonoBehaviour
 
             float timer = 0;
 
+            UIManager.Instance.EntityDamageNumber.InstantiateEntityDamage(amount, false, true, transform.position);
+            GetComponent<MovementController>().movementBlocked = true;
             //apply knockback
             while (1f > timer)
             {
                 timer += Time.deltaTime;
                 Vector2 direction = (hitDir.position - transform.position).normalized;
-                GetComponent<Rigidbody2D>().AddForce(-direction * knockbackPower);
+                GetComponent<Rigidbody2D>().AddForce((-direction * knockbackPower) * 5);
             }
+            GetComponent<MovementController>().movementBlocked = false;
         }
     }
 
