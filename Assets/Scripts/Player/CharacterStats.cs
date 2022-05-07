@@ -81,6 +81,15 @@ public class CharacterStats : MonoBehaviour
         private set { attackPower = value; }
     }
 
+    private float critChance;
+
+    public float CritChance
+    {
+        get { return critChance; }
+        set { critChance = value; }
+    }
+
+
 
     #endregion
 
@@ -279,7 +288,8 @@ public class CharacterStats : MonoBehaviour
     void RecalculateStats()
     {
         AttackPower.rawValue = Strength.Value / 4;
-        Debug.Log($"raw: {AttackPower.rawValue}, total: {AttackPower.Value}, list: {AttackPower.modifiers.Count}");
+        CritChance = DamageUtils.CalculateCritChance(Level, Agility.Value);
+        Debug.Log("CritChance: " + CritChance);
         //todo add crit, armor and such
     }
 

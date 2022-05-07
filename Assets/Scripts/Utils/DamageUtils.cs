@@ -10,5 +10,10 @@ public class DamageUtils
     {
         return weaponAttackDamage + charAttackPower;
     }
+
+    public static float CalculateCritChance(int level, int totalAgility)
+    {
+        return 5f + (totalAgility / (level * 1.3f)); 
+    }
 }
 

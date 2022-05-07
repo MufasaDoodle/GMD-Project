@@ -12,8 +12,20 @@ public class PlayerInventory : MonoBehaviour
         private set { inventorySlots = value; }
     }
 
+    private int gold;
+
+    public int Gold
+    {
+        get { return gold; }
+        set { gold = value; }
+    }
+
+
     public delegate void OnInventoryChanged(InventorySlot[] inventorySlots);
     public OnInventoryChanged onInventoryChanged;
+
+    public delegate void OnCurrencyChanged(int newGold);
+    public OnCurrencyChanged onCurrencyChanged;
 
 
     // Start is called before the first frame update
@@ -30,6 +42,27 @@ public class PlayerInventory : MonoBehaviour
     {
         AddItemToInventory(ItemDatabase.Instance.GetItemByID(4));
         AddItemToInventory(ItemDatabase.Instance.GetItemByID(5));
+        AddGold(10);
+    }
+
+    public void AddGold(int amount)
+    {
+        if (amount < 1)
+        {
+            Debug.LogError("Tried to add gold amount: " + amount); return;
+        }
+        Gold += amount;
+        onCurrencyChanged?.Invoke(Gold);
+    }
+
+    public void RemoveGold(int amount)
+    {
+        if (amount < 1)
+        {
+            Debug.LogError("Tried to remove gold amount: " + amount); return;
+        }
+        Gold -= amount;
+        onCurrencyChanged?.Invoke(Gold);
     }
 
     /// <summary>

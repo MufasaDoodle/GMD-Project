@@ -45,11 +45,25 @@ public class EnemyCombat : MonoBehaviour
             return;
         }
 
-        target.GetComponent<PlayerCombat>().TakeDamage(GetComponent<EnemyStats>().attackDamage, GetComponent<EnemyStats>().knockbackPower, GetComponent<Transform>());
+        var stats = GetComponent<EnemyStats>();
+
+        int damage = 0;
+        bool isCrit = false;
+        if (RNGUtil.Roll(5)) //enemies always has a 5% chance of critting player
+        {
+            damage = stats.attackDamage * 2;
+            isCrit = true;
+        }
+        else
+        {
+            damage = stats.attackDamage;
+        }
+
+        target.GetComponent<PlayerCombat>().TakeDamage(damage, GetComponent<EnemyStats>().knockbackPower, isCrit, GetComponent<Transform>());
         currentAttackCooldown = attackCooldown;
     }
 
-    public void TakeDamage(int amount, float knockbackPower, Transform hitDir)
+    public void TakeDamage(int amount, float knockbackPower, bool isCrit, Transform hitDir)
     {
         //can't get hurt if resetting
         if(GetComponent<EnemyAI>().state == EnemyAI.EnemyAIState.Resetting)
@@ -66,7 +80,7 @@ public class EnemyCombat : MonoBehaviour
 
         currentTakeDamageCooldown = takeDamageCooldown;
         GetComponent<EnemyStats>().TakeDamage(amount);
-        UIManager.Instance.EntityDamageNumber.InstantiateEntityDamage(amount, false, false, transform.position);
+        UIManager.Instance.EntityDamageNumber.InstantiateEntityDamage(amount, isCrit, false, transform.position);
 
         GetComponent<EnemyAI>().navAgent.speed = 0;
         float timer = 0;

@@ -17,7 +17,21 @@ public class WeaponEventHandler : MonoBehaviour
         {
             return;
         }
+        var stats = GetComponentInParent<CharacterStats>();
 
-        collision.GetComponent<EnemyCombat>().TakeDamage(GetComponentInParent<CharacterStats>().AttackPower.Value, 20, GetComponentInParent<Transform>());
+        int damage = 0;
+        bool isCrit = false;
+        //check if it's a crit
+        if (RNGUtil.Roll(stats.CritChance))
+        {
+            damage = stats.AttackPower.Value * 2;
+            isCrit = true;
+        }
+        else
+        {
+            damage = stats.AttackPower.Value;
+        }
+
+        collision.GetComponent<EnemyCombat>().TakeDamage(damage, 20, isCrit, GetComponentInParent<Transform>());
     }
 }

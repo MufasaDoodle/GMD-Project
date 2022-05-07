@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InventoryManagerUI : MonoBehaviour
 {
     public GameObject innerInventoryPanel;
 
     public InventorySlotUI[] inventorySlots;
+    public TextMeshProUGUI currencyField;
 
     public Sprite emptySlotSprite;
 
@@ -34,25 +36,33 @@ public class InventoryManagerUI : MonoBehaviour
 
     void SubscribeToEvents()
     {
-        PlayerManager.Instance.PlayerInventory.onInventoryChanged += RefreshUI;
+        PlayerManager.Instance.PlayerInventory.onInventoryChanged += RefreshUIInventory;
+        PlayerManager.Instance.PlayerInventory.onCurrencyChanged += RefreshCurrencyUI;
     }
 
     void UnsubscribeToEvents()
     {
-        PlayerManager.Instance.PlayerInventory.onInventoryChanged -= RefreshUI;
+        PlayerManager.Instance.PlayerInventory.onInventoryChanged -= RefreshUIInventory;
+        PlayerManager.Instance.PlayerInventory.onCurrencyChanged -= RefreshCurrencyUI;
     }
 
     IEnumerator Init()
     {
         new WaitForSeconds(0.1f);
 
-        RefreshUI(PlayerManager.Instance.PlayerInventory.InventorySlots);
+        RefreshCurrencyUI(PlayerManager.Instance.PlayerInventory.Gold);
+        RefreshUIInventory(PlayerManager.Instance.PlayerInventory.InventorySlots);
         SubscribeToEvents();
 
         yield return null;
     }
 
-    void RefreshUI(InventorySlot[] invSlots)
+    void RefreshCurrencyUI(int gold)
+    {
+        currencyField.text = $"Gold: {gold}";
+    }
+
+    void RefreshUIInventory(InventorySlot[] invSlots)
     {
         //get the correct equipment type index of the ui slots and assign its equipment type to it
         for (int i = 0; i < invSlots.Length; i++)

@@ -25,7 +25,7 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int amount, float knockbackPower, Transform hitDir)
+    public void TakeDamage(int amount, float knockbackPower, bool isCrit, Transform hitDir)
     {
         if(amount >= 0)
         {
@@ -34,7 +34,7 @@ public class PlayerCombat : MonoBehaviour
 
             float timer = 0;
 
-            UIManager.Instance.EntityDamageNumber.InstantiateEntityDamage(amount, false, true, transform.position);
+            UIManager.Instance.EntityDamageNumber.InstantiateEntityDamage(amount, isCrit, true, transform.position);
             GetComponent<MovementController>().movementBlocked = true;
             //apply knockback
             while (1f > timer)
