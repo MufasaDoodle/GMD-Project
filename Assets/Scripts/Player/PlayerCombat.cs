@@ -49,6 +49,11 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
     {
+        if (MouseUIUtils.IsPointerOverUIElement()) //if we are hovering over some ui, we block the attack from happening
+        {
+            return;
+        }
+
         slashGameObject.GetComponent<Animator>().SetBool("isAttacking", true);
         PlaySwingSound();
     }

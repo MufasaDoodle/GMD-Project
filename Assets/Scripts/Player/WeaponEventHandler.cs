@@ -10,6 +10,7 @@ public class WeaponEventHandler : MonoBehaviour
         GetComponentInParent<Animator>().SetBool("isAttacking", Convert.ToBoolean(state));
     }
 
+    //where the actual attack gets executed
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag != "Enemy")
@@ -17,7 +18,6 @@ public class WeaponEventHandler : MonoBehaviour
             return;
         }
 
-        //collision.attachedRigidbody.AddRelativeForce(new Vector2(0, -200));
-        collision.GetComponent<EnemyCombat>().TakeDamage(GetComponentInParent<CharacterStats>().Strength.Value, 20, GetComponentInParent<Transform>());
+        collision.GetComponent<EnemyCombat>().TakeDamage(GetComponentInParent<CharacterStats>().AttackPower.Value, 20, GetComponentInParent<Transform>());
     }
 }

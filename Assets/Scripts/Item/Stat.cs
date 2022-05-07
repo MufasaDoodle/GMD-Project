@@ -43,4 +43,4 @@ public class Stat
     }
 }
 
-public enum StatType { Stamina, Strength, Agility, CritChance, Armor, BlockChance }
+public enum StatType { Stamina, Strength, Agility, AttackPower, CritChance, Armor, BlockChance }

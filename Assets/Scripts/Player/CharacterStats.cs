@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
@@ -72,6 +73,14 @@ public class CharacterStats : MonoBehaviour
         set { level = value; }
     }
 
+    private Stat attackPower;
+
+    public Stat AttackPower
+    {
+        get { return attackPower; }
+        private set { attackPower = value; }
+    }
+
 
     #endregion
 
@@ -89,6 +98,7 @@ public class CharacterStats : MonoBehaviour
         Stamina = new Stat();
         Strength = new Stat();
         Agility = new Stat();
+        AttackPower = new Stat();
 
         //later we load this initial char data from a savefile
         Level = 1;
@@ -105,12 +115,12 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
-        if(currentHealth != maxHealth)
+        if (currentHealth != maxHealth)
         {
             healthRegenTimer -= Time.deltaTime;
             healthRegenTimer = Mathf.Clamp(healthRegenTimer, 0f, 3f); //ensure timer doesn't go below zero
 
-            if(healthRegenTimer == 0f)
+            if (healthRegenTimer == 0f)
             {
                 HealHealth(maxHealth / 12);
                 healthRegenTimer = 3f;
@@ -156,7 +166,7 @@ public class CharacterStats : MonoBehaviour
         //Update UI
         HealthChanged();
 
-        if(currentHealth == maxHealth)
+        if (currentHealth == maxHealth)
         {
             healthRegenTimer = 3f;
         }
@@ -168,7 +178,7 @@ public class CharacterStats : MonoBehaviour
     {
         CurrentXP += amount;
 
-        while(CurrentXP >= XPToLevel)
+        while (CurrentXP >= XPToLevel)
         {
             CurrentXP -= XPToLevel;
             LevelUp();
@@ -188,6 +198,7 @@ public class CharacterStats : MonoBehaviour
         Agility.rawValue += 2;
         MaxHealth = Stamina.Value * 10; //every stamina is worth 10 health
         CurrentHealth = MaxHealth;
+        RecalculateStats();
     }
 
     void PublishStats()
@@ -204,25 +215,29 @@ public class CharacterStats : MonoBehaviour
     {
         foreach (var eqStat in equipment.equipmentStats)
         {
-            if(eqStat.statType == StatType.Stamina)
+            if (eqStat.statType == StatType.Stamina)
             {
                 Stamina.modifiers.Add(eqStat.statValue);
                 RecalculateHealth();
             }
-            else if(eqStat.statType == StatType.Strength)
+            else if (eqStat.statType == StatType.Strength)
             {
                 Strength.modifiers.Add(eqStat.statValue);
             }
-            else if(eqStat.statType == StatType.Agility)
+            else if (eqStat.statType == StatType.Agility)
             {
                 Agility.modifiers.Add(eqStat.statValue);
+            }
+            else if (eqStat.statType == StatType.AttackPower)
+            {
+                AttackPower.modifiers.Add(eqStat.statValue);
             }
             else
             {
                 Debug.LogError("Stat type not defined in player character");
             }
 
-            //TODO recalculateStats();
+            RecalculateStats();
             HealthChanged();
             PublishStats();
         }
@@ -245,16 +260,27 @@ public class CharacterStats : MonoBehaviour
             {
                 Agility.modifiers.Remove(eqStat.statValue);
             }
+            else if(eqStat.statType == StatType.AttackPower)
+            {
+                AttackPower.modifiers.Remove(eqStat.statValue);
+            }
             else
             {
                 Debug.LogError("Stat type not defined in player character");
             }
 
-            //TODO recalculateStats(); //for other stats not yet implemented, like crit, armor
+            RecalculateStats();
             HealthChanged();
             PublishStats();
         }
         Debug.Log("Equipment change registered");
+    }
+
+    void RecalculateStats()
+    {
+        AttackPower.rawValue = Strength.Value / 4;
+        Debug.Log($"raw: {AttackPower.rawValue}, total: {AttackPower.Value}, list: {AttackPower.modifiers.Count}");
+        //todo add crit, armor and such
     }
 
     void RecalculateHealth()
