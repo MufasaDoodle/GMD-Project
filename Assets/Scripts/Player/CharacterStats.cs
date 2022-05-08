@@ -212,7 +212,7 @@ public class CharacterStats : MonoBehaviour
             LevelUp();
             XPToLevel = FormulaHelper.CalculateXP(Level);
         }
-        ChatLog.Instance.AddEntry($"Recieved {amount} XP");
+        ChatLog.Instance.AddEntry($"<color=purple>Recieved <color=white>{amount}</color> XP</color>");
         //Update UI
         HealthChanged();
         PublishStats();
@@ -220,7 +220,7 @@ public class CharacterStats : MonoBehaviour
 
     private void LevelUp()
     {
-        ChatLog.Instance.AddEntry("Levelled up!");
+        ChatLog.Instance.AddEntry("<color=green>Levelled up!</color>");
         Level += 1;
         Stamina.rawValue += 2;
         Strength.rawValue += 3;
@@ -334,6 +334,6 @@ public class CharacterStats : MonoBehaviour
 
     private void Death()
     {
-        ChatLog.Instance.AddEntry("Dead");
+        ChatLog.Instance.AddEntry("<color=red>Dead</color>");
     }
 }

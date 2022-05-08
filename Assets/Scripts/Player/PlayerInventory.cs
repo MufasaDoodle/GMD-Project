@@ -53,7 +53,7 @@ public class PlayerInventory : MonoBehaviour
         }
         Gold += amount;
         onCurrencyChanged?.Invoke(Gold);
-        ChatLog.Instance.AddEntry($"Added {amount} gold");
+        ChatLog.Instance.AddEntry($"<color=green>Added <color=white>{amount}</color> gold</color>");
     }
 
     public void RemoveGold(int amount)
@@ -64,7 +64,7 @@ public class PlayerInventory : MonoBehaviour
         }
         Gold -= amount;
         onCurrencyChanged?.Invoke(Gold);
-        ChatLog.Instance.AddEntry($"Removed {amount} gold");
+        ChatLog.Instance.AddEntry($"<color=red>Removed <color=orange>{amount}</color> gold</color>");
     }
 
     /// <summary>
@@ -106,11 +106,15 @@ public class PlayerInventory : MonoBehaviour
     {
         int availableIndex = GetIndexOfFirstEmptySlot();
 
-        if (availableIndex == -1) return; //TODO give user a notification that inventory is full
+        if (availableIndex == -1)
+        {
+            ChatLog.Instance.AddEntry($"Inventory full. Discarding {item.ItemName}");
+            return; 
+        } 
 
         InventorySlots[availableIndex].item = item;
         onInventoryChanged?.Invoke(inventorySlots);
-        ChatLog.Instance.AddEntry($"Added item {item.ItemName} to inventory");
+        ChatLog.Instance.AddEntry($"<color=green>Added item <color=orange>{item.ItemName}</color> to inventory</color>");
     }
 
     public void RemoveItemFromInventoryWithIndex(int index)
@@ -121,7 +125,7 @@ public class PlayerInventory : MonoBehaviour
             return;
         }
 
-        ChatLog.Instance.AddEntry($"removed item {InventorySlots[index].item.ItemName} from inventory");
+        ChatLog.Instance.AddEntry($"<color=red>Removed item <color=orange>{InventorySlots[index].item.ItemName}</color> from inventory</color>");
         InventorySlots[index].item = null;
         onInventoryChanged?.Invoke(inventorySlots);
     }
@@ -139,7 +143,7 @@ public class PlayerInventory : MonoBehaviour
     {
         for (int i = 0; i < InventorySlots.Length; i++)
         {
-            if(InventorySlots[i].item.ID == id)
+            if (InventorySlots[i].item.ID == id)
             {
                 return i;
             }

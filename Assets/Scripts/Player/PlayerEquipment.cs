@@ -68,7 +68,7 @@ public class PlayerEquipment : MonoBehaviour
             {
                 if (equipment.LevelRequirement > GetComponent<CharacterStats>().Level)
                 {
-                    ChatLog.Instance.AddEntry("Equipment requires a higher level to use");
+                    ChatLog.Instance.AddEntry("<color=red>Equipment requires a higher level to use</color>");
                     return;
                 }
                 equipmentSlot.equipment = equipment;
