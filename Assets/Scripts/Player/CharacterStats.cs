@@ -212,7 +212,7 @@ public class CharacterStats : MonoBehaviour
             LevelUp();
             XPToLevel = FormulaHelper.CalculateXP(Level);
         }
-
+        ChatLog.Instance.AddEntry($"Recieved {amount} XP");
         //Update UI
         HealthChanged();
         PublishStats();
@@ -220,6 +220,7 @@ public class CharacterStats : MonoBehaviour
 
     private void LevelUp()
     {
+        ChatLog.Instance.AddEntry("Levelled up!");
         Level += 1;
         Stamina.rawValue += 2;
         Strength.rawValue += 3;
@@ -260,7 +261,7 @@ public class CharacterStats : MonoBehaviour
             {
                 AttackPower.modifiers.Add(eqStat.statValue);
             }
-            else if(eqStat.statType == StatType.Armor)
+            else if (eqStat.statType == StatType.Armor)
             {
                 Armor.modifiers.Add(eqStat.statValue);
             }
@@ -296,7 +297,7 @@ public class CharacterStats : MonoBehaviour
             {
                 Agility.modifiers.Remove(eqStat.statValue);
             }
-            else if(eqStat.statType == StatType.AttackPower)
+            else if (eqStat.statType == StatType.AttackPower)
             {
                 AttackPower.modifiers.Remove(eqStat.statValue);
             }
@@ -333,6 +334,6 @@ public class CharacterStats : MonoBehaviour
 
     private void Death()
     {
-        Debug.Log("Dead");
+        ChatLog.Instance.AddEntry("Dead");
     }
 }

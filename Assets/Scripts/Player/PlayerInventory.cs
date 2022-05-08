@@ -53,7 +53,7 @@ public class PlayerInventory : MonoBehaviour
         }
         Gold += amount;
         onCurrencyChanged?.Invoke(Gold);
-        Debug.Log($"Added {amount} gold");
+        ChatLog.Instance.AddEntry($"Added {amount} gold");
     }
 
     public void RemoveGold(int amount)
@@ -64,7 +64,7 @@ public class PlayerInventory : MonoBehaviour
         }
         Gold -= amount;
         onCurrencyChanged?.Invoke(Gold);
-        Debug.Log($"Removed {amount} gold");
+        ChatLog.Instance.AddEntry($"Removed {amount} gold");
     }
 
     /// <summary>
@@ -110,7 +110,7 @@ public class PlayerInventory : MonoBehaviour
 
         InventorySlots[availableIndex].item = item;
         onInventoryChanged?.Invoke(inventorySlots);
-        Debug.Log($"Added item {item.ItemName} to inventory");
+        ChatLog.Instance.AddEntry($"Added item {item.ItemName} to inventory");
     }
 
     public void RemoveItemFromInventoryWithIndex(int index)
@@ -121,7 +121,7 @@ public class PlayerInventory : MonoBehaviour
             return;
         }
 
-        Debug.Log($"removed item {InventorySlots[index].item.ItemName} from inventory");
+        ChatLog.Instance.AddEntry($"removed item {InventorySlots[index].item.ItemName} from inventory");
         InventorySlots[index].item = null;
         onInventoryChanged?.Invoke(inventorySlots);
     }

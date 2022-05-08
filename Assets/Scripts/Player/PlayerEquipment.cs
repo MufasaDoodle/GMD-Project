@@ -68,13 +68,12 @@ public class PlayerEquipment : MonoBehaviour
             {
                 if (equipment.LevelRequirement > GetComponent<CharacterStats>().Level)
                 {
-                    Debug.Log("Equipment requires a higher level to use");
-                    //TODO have a message pop up for the user instead of a debug log
+                    ChatLog.Instance.AddEntry("Equipment requires a higher level to use");
                     return;
                 }
                 equipmentSlot.equipment = equipment;
 
-                Debug.Log($"Equipped {equipment.ItemName}");
+                ChatLog.Instance.AddEntry($"Equipped {equipment.ItemName}");
                 onEquipmentAdded?.Invoke(equipment);
                 return;
             }
