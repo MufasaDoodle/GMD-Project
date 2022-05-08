@@ -45,18 +45,12 @@ public class Tooltip : MonoBehaviour
         }
 
         tooltipPanel.SetActive(true);
-        //Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         
         Vector2 mousePos;
 
         RectTransformUtility.ScreenPointToLocalPointInRectangle(GetComponentInParent<Canvas>().transform as RectTransform, Input.mousePosition, GetComponentInParent<Canvas>().worldCamera, out mousePos);
         mousePos.y -= 50;
         transform.position = GetComponentInParent<Canvas>().transform.TransformPoint(mousePos);
-
-        //Vector3 mousePosTemp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //Vector2 mousePos = new Vector2(mousePosTemp.x, mousePosTemp.y);
-        //tooltipPanel.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge.anchoredPosition = mousePos;
-        //LayoutRebuilder.MarkLayoutForRebuild(tooltipPanel.GetComponent<RectTransform>());
     }
 
 

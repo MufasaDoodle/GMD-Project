@@ -54,6 +54,7 @@ public class PlayerCombat : MonoBehaviour
             return;
         }
 
+        ContextMenuUI.Instance.gameObject.SetActive(false); //if we have a dialog box open we close it
         slashGameObject.GetComponent<Animator>().SetBool("isAttacking", true);
         PlaySwingSound();
     }

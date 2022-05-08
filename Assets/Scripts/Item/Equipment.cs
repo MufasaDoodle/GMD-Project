@@ -32,6 +32,11 @@ public class Equipment : Item
     public List<EquipmentStat> equipmentStats = new List<EquipmentStat>();
 
 
+    public Equipment(int iD, ItemRarity itemRarity, ItemType itemType, string itemName, int sellPrice, int marketPrice, string imagePath) : base(iD, itemRarity, itemType, itemName, sellPrice, marketPrice, imagePath)
+    {
+        contextOptions.Add("Equip");
+    }
+
     public void AddStat(EquipmentStat stat)
     {
         equipmentStats.Add(stat);

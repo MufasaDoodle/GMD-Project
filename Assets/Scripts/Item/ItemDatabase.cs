@@ -63,6 +63,7 @@ public class ItemDatabase : MonoBehaviour
 
     void CreateAndAddTestItems()
     {
+        /*
         Equipment weapon = new Equipment();
         weapon.ItemName = "Used Sword";
         weapon.ItemRarity = ItemRarity.Common;
@@ -106,5 +107,6 @@ public class ItemDatabase : MonoBehaviour
         AddItemToDatabase(earring);
         AddItemToDatabase(ruinedPelt);
         AddItemToDatabase(brokenTusk);
+        */
     }
 }

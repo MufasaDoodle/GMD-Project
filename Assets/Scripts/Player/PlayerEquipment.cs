@@ -89,6 +89,7 @@ public class PlayerEquipment : MonoBehaviour
             if (equipmentSlot.equipmentType == equipmentType)
             {
                 Equipment equipmentToRemove = equipmentSlot.equipment;
+                PlayerManager.Instance.PlayerInventory.AddItemToInventory(equipmentToRemove);
                 onEquipmentRemoved?.Invoke(equipmentToRemove);
                 equipmentSlot.equipment = null;
             }

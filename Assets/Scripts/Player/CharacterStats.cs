@@ -187,8 +187,10 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
-    public void HealHealth(int healAmount)
+    public void HealHealth(int healAmount, bool postInChat = false)
     {
+        if (postInChat)
+            ChatLog.Instance.AddEntry($"<color=green>Healed for <color=white>{healAmount}</color></color>");
         CurrentHealth += healAmount;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth); //ensures health cannot go above maxHealth
         //Update UI

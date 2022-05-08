@@ -42,6 +42,8 @@ public class PlayerInventory : MonoBehaviour
     {
         AddItemToInventory(ItemDatabase.Instance.GetItemByID(4));
         AddItemToInventory(ItemDatabase.Instance.GetItemByID(5));
+        AddItemToInventory(ItemDatabase.Instance.GetItemByID(6));
+        AddItemToInventory(ItemDatabase.Instance.GetItemByID(7));
         AddGold(10);
     }
 
@@ -102,6 +104,39 @@ public class PlayerInventory : MonoBehaviour
         return -1;
     }
 
+    public void UseItemInInventory(string command, int inventorySlotID)
+    {
+        Item itemToUse = GetItemAtIndex(inventorySlotID);
+
+        Debug.Log($"Received command {command} for {itemToUse.ItemName} (InvID: {inventorySlotID})");
+
+        if (command == "Drop")
+        {
+            RemoveItemFromInventoryWithIndex(inventorySlotID, true);
+        }
+        else if (command == "Use")
+        {
+            if (itemToUse.GetType() == typeof(Consumable))
+            {
+                UseConsumable((Consumable)itemToUse);
+                RemoveItemFromInventoryWithIndex(inventorySlotID);
+            }
+        }
+        else if(command == "Equip")
+        {
+            if (itemToUse.GetType() == typeof(Equipment))
+            {
+                PlayerManager.Instance.PlayerEquipment.EquipItem((Equipment)itemToUse);
+                RemoveItemFromInventoryWithIndex(inventorySlotID);
+            }
+        }
+        else
+        {
+            Debug.LogError($"Unrecognized context command: {command}");
+        }
+
+    }
+
     public void AddItemToInventory(Item item)
     {
         int availableIndex = GetIndexOfFirstEmptySlot();
@@ -109,15 +144,15 @@ public class PlayerInventory : MonoBehaviour
         if (availableIndex == -1)
         {
             ChatLog.Instance.AddEntry($"Inventory full. Discarding {item.ItemName}");
-            return; 
-        } 
+            return;
+        }
 
         InventorySlots[availableIndex].item = item;
         onInventoryChanged?.Invoke(inventorySlots);
         ChatLog.Instance.AddEntry($"<color=green>Added item <color=orange>{item.ItemName}</color> to inventory</color>");
     }
 
-    public void RemoveItemFromInventoryWithIndex(int index)
+    public void RemoveItemFromInventoryWithIndex(int index, bool postInChatLog = false)
     {
         if (index > InventorySlots.Length || index < 0)
         {
@@ -125,7 +160,8 @@ public class PlayerInventory : MonoBehaviour
             return;
         }
 
-        ChatLog.Instance.AddEntry($"<color=red>Removed item <color=orange>{InventorySlots[index].item.ItemName}</color> from inventory</color>");
+        if (postInChatLog)
+            ChatLog.Instance.AddEntry($"<color=red>Removed item <color=orange>{InventorySlots[index].item.ItemName}</color> from inventory</color>");
         InventorySlots[index].item = null;
         onInventoryChanged?.Invoke(inventorySlots);
     }
@@ -150,5 +186,14 @@ public class PlayerInventory : MonoBehaviour
         }
 
         return -1;
+    }
+
+    private void UseConsumable(Consumable item)
+    {
+        if (item.Effect == ConsumableEffect.Heal)
+        {
+            ChatLog.Instance.AddEntry("Used: " + item.ItemName);
+            PlayerManager.Instance.PlayerStats.HealHealth(item.Amount, true);
+        }
     }
 }

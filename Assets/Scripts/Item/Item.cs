@@ -9,8 +9,8 @@ using UnityEngine;
 [JsonConverter(typeof(JsonSubtypes), "ItemType")]
 [JsonSubtypes.KnownSubType(typeof(Equipment), ItemType.Equipment)]
 [JsonSubtypes.KnownSubType(typeof(Trash), ItemType.Trash)]
-//[JsonSubtypes.KnownSubType(typeof(Equipment), ItemType.CraftingMaterial)]
-//[JsonSubtypes.KnownSubType(typeof(Equipment), ItemType.Equipment)]
+[JsonSubtypes.KnownSubType(typeof(Consumable), ItemType.Consumable)]
+//if we decide to add more itemtypes, we must define them here for the json converter to recognize it
 public abstract class Item
 {
     #region Properties
@@ -29,6 +29,20 @@ public abstract class Item
     private int marketPrice;
     [SerializeField]
     private string imagePath = "Item Art/Equipment/Placeholder";
+
+    public List<string> contextOptions = new List<string>();
+
+    protected Item(int iD, ItemRarity itemRarity, ItemType itemType, string itemName, int sellPrice, int marketPrice, string imagePath)
+    {
+        ID = iD;
+        ItemRarity = itemRarity;
+        ItemType = itemType;
+        ItemName = itemName;
+        SellPrice = sellPrice;
+        MarketPrice = marketPrice;
+        ImagePath = imagePath;
+        contextOptions.Add("Drop");
+    }
 
     public int ID
     {
