@@ -53,6 +53,7 @@ public class PlayerInventory : MonoBehaviour
         }
         Gold += amount;
         onCurrencyChanged?.Invoke(Gold);
+        Debug.Log($"Added {amount} gold");
     }
 
     public void RemoveGold(int amount)
@@ -63,6 +64,7 @@ public class PlayerInventory : MonoBehaviour
         }
         Gold -= amount;
         onCurrencyChanged?.Invoke(Gold);
+        Debug.Log($"Removed {amount} gold");
     }
 
     /// <summary>

@@ -12,6 +12,10 @@ public class CharacterStatsUI : MonoBehaviour
     public TextMeshProUGUI strengthUI;
     public TextMeshProUGUI staminaUI;
     public TextMeshProUGUI agilityUI;
+    public TextMeshProUGUI armorUI;
+    public TextMeshProUGUI critChanceUI;
+    public TextMeshProUGUI apUI;
+    public TextMeshProUGUI blockChanceUI;
 
     private void Start()
     {
@@ -32,6 +36,10 @@ public class CharacterStatsUI : MonoBehaviour
         strengthUI.text = $"Strength: {stats.Strength.Value}";
         staminaUI.text = $"Stamina: {stats.Stamina.Value}";
         agilityUI.text = $"Agility: {stats.Agility.Value}";
+        armorUI.text = $"Armor: {stats.Armor.Value}";
+        critChanceUI.text = $"Crit Chance: {stats.CritChance.ToString("0.00")}%";
+        apUI.text = $"Attack Power: {stats.AttackPower.Value}";
+        blockChanceUI.text = $"Block Chance: {stats.BlockChance.Value}";
     }
 
     void SubscribeToEvents()

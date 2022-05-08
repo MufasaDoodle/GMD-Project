@@ -81,6 +81,23 @@ public class CharacterStats : MonoBehaviour
         private set { attackPower = value; }
     }
 
+    private Stat armor;
+
+    public Stat Armor
+    {
+        get { return armor; }
+        set { armor = value; }
+    }
+
+    private Stat blockChance;
+
+    public Stat BlockChance
+    {
+        get { return blockChance; }
+        set { blockChance = value; }
+    }
+
+
     private float critChance;
 
     public float CritChance
@@ -108,6 +125,8 @@ public class CharacterStats : MonoBehaviour
         Strength = new Stat();
         Agility = new Stat();
         AttackPower = new Stat();
+        Armor = new Stat();
+        BlockChance = new Stat();
 
         //later we load this initial char data from a savefile
         Level = 1;
@@ -241,6 +260,14 @@ public class CharacterStats : MonoBehaviour
             {
                 AttackPower.modifiers.Add(eqStat.statValue);
             }
+            else if(eqStat.statType == StatType.Armor)
+            {
+                Armor.modifiers.Add(eqStat.statValue);
+            }
+            else if (eqStat.statType == StatType.BlockChance)
+            {
+                BlockChance.modifiers.Add(eqStat.statValue);
+            }
             else
             {
                 Debug.LogError("Stat type not defined in player character");
@@ -273,6 +300,14 @@ public class CharacterStats : MonoBehaviour
             {
                 AttackPower.modifiers.Remove(eqStat.statValue);
             }
+            else if (eqStat.statType == StatType.Armor)
+            {
+                Armor.modifiers.Remove(eqStat.statValue);
+            }
+            else if (eqStat.statType == StatType.BlockChance)
+            {
+                BlockChance.modifiers.Remove(eqStat.statValue);
+            }
             else
             {
                 Debug.LogError("Stat type not defined in player character");
@@ -289,8 +324,6 @@ public class CharacterStats : MonoBehaviour
     {
         AttackPower.rawValue = Strength.Value / 4;
         CritChance = DamageUtils.CalculateCritChance(Level, Agility.Value);
-        Debug.Log("CritChance: " + CritChance);
-        //todo add crit, armor and such
     }
 
     void RecalculateHealth()

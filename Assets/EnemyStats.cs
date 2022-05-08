@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +25,22 @@ public class EnemyStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             GrantXP();
+            GiveLoot();
             Destroy(gameObject);
+        }
+    }
+
+    private void GiveLoot()
+    {
+        var lootTable = GetComponent<LootTable>();
+
+        if (lootTable.canDropGold)
+        {
+            LootUtil.GiveLootFromTable(lootTable.lootEntries, PlayerManager.Instance.PlayerInventory, lootTable.goldDropMin, lootTable.goldDropMax);
+        }
+        else
+        {
+            LootUtil.GiveLootFromTable(lootTable.lootEntries, PlayerManager.Instance.PlayerInventory);
         }
     }
 

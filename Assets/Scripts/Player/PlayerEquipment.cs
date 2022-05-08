@@ -74,7 +74,6 @@ public class PlayerEquipment : MonoBehaviour
                 }
                 equipmentSlot.equipment = equipment;
 
-                //TODO update equipment UI with this info
                 Debug.Log($"Equipped {equipment.ItemName}");
                 onEquipmentAdded?.Invoke(equipment);
                 return;
@@ -86,7 +85,6 @@ public class PlayerEquipment : MonoBehaviour
 
     public void UnequipItem(EquipmentType equipmentType)
     {
-        //TODO allow unequipping of item with an ID
         foreach (var equipmentSlot in equipmentSlots)
         {
             if (equipmentSlot.equipmentType == equipmentType)

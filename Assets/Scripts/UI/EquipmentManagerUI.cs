@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EquipmentManagerUI : MonoBehaviour
 {
-    //TODO tooltip when hovering over the slots
-
     bool isInitialized = false;
 
     [SerializeField]
