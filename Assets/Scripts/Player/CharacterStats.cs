@@ -271,6 +271,10 @@ public class CharacterStats : MonoBehaviour
             {
                 BlockChance.modifiers.Add(eqStat.statValue);
             }
+            else if(eqStat.statType == StatType.CritChance)
+            {
+                CritChance += eqStat.statValue;
+            }
             else
             {
                 Debug.LogError("Stat type not defined in player character");
@@ -310,6 +314,10 @@ public class CharacterStats : MonoBehaviour
             else if (eqStat.statType == StatType.BlockChance)
             {
                 BlockChance.modifiers.Remove(eqStat.statValue);
+            }
+            else if (eqStat.statType == StatType.CritChance)
+            {
+                CritChance -= eqStat.statValue;
             }
             else
             {

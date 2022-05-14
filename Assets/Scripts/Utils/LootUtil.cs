@@ -46,6 +46,6 @@ class LootUtil
         int amountOfGold = Random.Range(goldMin, goldMax + 1);
         inventory.AddGold(amountOfGold);
         toPrint += amountOfGold + " gold";
-        Debug.Log(toPrint);
+        //Debug.Log(toPrint);
     }
 }

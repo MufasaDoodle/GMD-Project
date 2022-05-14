@@ -42,8 +42,6 @@ public class PlayerEquipment : MonoBehaviour
     {
         //for debugging        
         EquipItem(ItemDatabase.Instance.GetItemByID(1) as Equipment);
-        EquipItem(ItemDatabase.Instance.GetItemByID(2) as Equipment);
-        EquipItem(ItemDatabase.Instance.GetItemByID(3) as Equipment);
     }
 
     public Equipment GetEquipmentAtType(EquipmentType equipmentType)
@@ -69,7 +67,12 @@ public class PlayerEquipment : MonoBehaviour
                 if (equipment.LevelRequirement > GetComponent<CharacterStats>().Level)
                 {
                     ChatLog.Instance.AddEntry("<color=red>Equipment requires a higher level to use</color>");
+                    PlayerManager.Instance.PlayerInventory.AddItemToInventory(equipment);
                     return;
+                }
+                if(equipmentSlot.equipment != null)
+                {
+                    UnequipItem(equipmentSlot.equipmentType);
                 }
                 equipmentSlot.equipment = equipment;
 

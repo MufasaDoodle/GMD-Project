@@ -42,6 +42,7 @@ public abstract class Item
         MarketPrice = marketPrice;
         ImagePath = imagePath;
         contextOptions.Add("Drop");
+        contextOptions.Add("Sell");
     }
 
     public int ID

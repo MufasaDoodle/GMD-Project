@@ -22,6 +22,14 @@ public class ChatLog : MonoBehaviour
 
     public void AddEntry(string text)
     {
+        if(chatEntries.Count > 250)
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                chatEntries.RemoveAt(i);
+            }
+        }
+
         chatEntries.Add(text);
         UpdateChatUI();
     }

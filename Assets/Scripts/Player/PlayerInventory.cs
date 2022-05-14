@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,10 +41,6 @@ public class PlayerInventory : MonoBehaviour
 
     private void Start()
     {
-        AddItemToInventory(ItemDatabase.Instance.GetItemByID(4));
-        AddItemToInventory(ItemDatabase.Instance.GetItemByID(5));
-        AddItemToInventory(ItemDatabase.Instance.GetItemByID(6));
-        AddItemToInventory(ItemDatabase.Instance.GetItemByID(7));
         AddGold(10);
     }
 
@@ -108,8 +105,6 @@ public class PlayerInventory : MonoBehaviour
     {
         Item itemToUse = GetItemAtIndex(inventorySlotID);
 
-        Debug.Log($"Received command {command} for {itemToUse.ItemName} (InvID: {inventorySlotID})");
-
         if (command == "Drop")
         {
             RemoveItemFromInventoryWithIndex(inventorySlotID, true);
@@ -129,6 +124,10 @@ public class PlayerInventory : MonoBehaviour
                 PlayerManager.Instance.PlayerEquipment.EquipItem((Equipment)itemToUse);
                 RemoveItemFromInventoryWithIndex(inventorySlotID);
             }
+        }
+        else if(command == "Sell")
+        {
+            SellItem(inventorySlotID);
         }
         else
         {
@@ -188,6 +187,24 @@ public class PlayerInventory : MonoBehaviour
         return -1;
     }
 
+    public void PurchaseItem(Item item)
+    {
+        if(item.MarketPrice > Gold)
+        {
+            ChatLog.Instance.AddEntry($"<color=red>Not enough money to buy {item.ItemName}</color>");
+            return;
+        }
+
+        if(GetIndexOfFirstEmptySlot() == -1)
+        {
+            ChatLog.Instance.AddEntry($"<color=red>Not enough inventory space to buy {item.ItemName}</color>");
+            return;
+        }
+
+        RemoveGold(item.MarketPrice);
+        AddItemToInventory(item);
+    }
+
     private void UseConsumable(Consumable item)
     {
         if (item.Effect == ConsumableEffect.Heal)
@@ -195,5 +212,26 @@ public class PlayerInventory : MonoBehaviour
             ChatLog.Instance.AddEntry("Used: " + item.ItemName);
             PlayerManager.Instance.PlayerStats.HealHealth(item.Amount, true);
         }
+    }
+
+    private void SellItem(int inventorySlotID)
+    {
+        if (!PlayerManager.Instance.isInRangeOfShop)
+        {
+            ChatLog.Instance.AddEntry("You must be at a shop to sell items");
+            return;
+        }
+
+        Item itemToSell = GetItemAtIndex(inventorySlotID);
+
+        if(itemToSell == null)
+        {
+            Debug.LogError("No item found at index: " + inventorySlotID);
+            return;
+        }
+
+        AddGold(itemToSell.SellPrice);
+        RemoveItemFromInventoryWithIndex(inventorySlotID);
+        ChatLog.Instance.AddEntry($"Sold item {itemToSell.ItemName} for {itemToSell.SellPrice} gold");
     }
 }

@@ -6,6 +6,8 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
 
+    public bool isInRangeOfShop = false;
+
     public CharacterStats PlayerStats;
     public PlayerEquipment PlayerEquipment;
     public PlayerInventory PlayerInventory;
