@@ -39,9 +39,8 @@ public class PlayerEquipment : MonoBehaviour
     }
 
     private void Start()
-    {
-        //for debugging        
-        EquipItem(ItemDatabase.Instance.GetItemByID(1) as Equipment);
+    {   
+        EquipItem(ItemDatabase.Instance.GetItemByID(1) as Equipment); //starter sword
     }
 
     public Equipment GetEquipmentAtType(EquipmentType equipmentType)
@@ -70,7 +69,7 @@ public class PlayerEquipment : MonoBehaviour
                     PlayerManager.Instance.PlayerInventory.AddItemToInventory(equipment);
                     return;
                 }
-                if(equipmentSlot.equipment != null)
+                if (equipmentSlot.equipment != null)
                 {
                     UnequipItem(equipmentSlot.equipmentType);
                 }
