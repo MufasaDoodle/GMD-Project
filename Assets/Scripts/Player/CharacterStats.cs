@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -344,6 +345,6 @@ public class CharacterStats : MonoBehaviour
 
     private void Death()
     {
-        ChatLog.Instance.AddEntry("<color=red>Dead</color>");
+        SceneManager.LoadScene("DeathScreen");
     }
 }
