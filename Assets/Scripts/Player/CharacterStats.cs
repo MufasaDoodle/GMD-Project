@@ -155,22 +155,6 @@ public class CharacterStats : MonoBehaviour
                 healthRegenTimer = 3f;
             }
         }
-
-        //For debugging
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            HealHealth(1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TakeDamage(1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            AddXP(10000);
-        }
     }
 
     public void TakeDamage(int damageAmount)
