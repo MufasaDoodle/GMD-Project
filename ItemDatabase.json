@@ -1,0 +1,1664 @@
+[
+  {
+    "equipmentStats": [      
+      {
+        "statType": 3,
+        "statValue": 3
+      }
+    ],
+    "LevelRequirement": 1,
+    "EquipmentType": 0,
+    "ID": 1,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Used Sword",
+    "SellPrice": 3,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Equipment/sword2"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 2
+      }
+    ],
+    "LevelRequirement": 1,
+    "EquipmentType": 9,
+    "ID": 2,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Ring of Minor Fencing",
+    "SellPrice": 10,
+    "MarketPrice": 20,
+    "ImagePath": "Item Art/Equipment/rings"
+  },
+  {
+    "equipmentStats": [      
+	  {
+        "statType": 1,
+        "statValue": 2
+      }
+    ],
+    "LevelRequirement": 1,
+    "EquipmentType": 7,
+    "ID": 3,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Necklace of Minor Strength",
+    "SellPrice": 10,
+    "MarketPrice": 20,
+    "ImagePath": "Item Art/Equipment/necklace"
+  },
+  {
+    "ID": 4,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Rotten Bones",
+    "SellPrice": 3,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 5,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Bonemarrow",
+    "SellPrice": 5,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+	"Effect": 0,
+	"Amount": 10,
+    "ID": 6,
+    "ItemRarity": 0,
+    "ItemType": 3,
+    "ItemName": "Potion of Minor Healing",
+    "SellPrice": 3,
+    "MarketPrice": 10,
+    "ImagePath": "Item Art/Potions/Potion_Tiny_Red"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 1
+      },
+	  {
+        "statType": 3,
+        "statValue": 2
+      }
+    ],
+    "LevelRequirement": 1,
+    "EquipmentType": 4,
+    "ID": 7,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Boots of Minor Power",
+    "SellPrice": 10,
+    "MarketPrice": 20,
+    "ImagePath": "Item Art/Equipment/boots"
+  },
+  {
+	"Effect": 0,
+	"Amount": 30,
+    "ID": 8,
+    "ItemRarity": 0,
+    "ItemType": 3,
+    "ItemName": "Potion of Lesser Healing",
+    "SellPrice": 3,
+    "MarketPrice": 50,
+    "ImagePath": "Item Art/Potions/Potion_Small_Red"
+  },
+  {
+	"Effect": 0,
+	"Amount": 60,
+    "ID": 9,
+    "ItemRarity": 1,
+    "ItemType": 3,
+    "ItemName": "Potion of Healing",
+    "SellPrice": 3,
+    "MarketPrice": 250,
+    "ImagePath": "Item Art/Potions/Potion_Medium_Red"
+  },
+  {
+	"Effect": 0,
+	"Amount": 100,
+    "ID": 10,
+    "ItemRarity": 2,
+    "ItemType": 3,
+    "ItemName": "Potion of Healing",
+    "SellPrice": 3,
+    "MarketPrice": 1000,
+    "ImagePath": "Item Art/Potions/Potion_Large_Red"
+  },
+  {
+	"Effect": 0,
+	"Amount": 150,
+    "ID": 11,
+    "ItemRarity": 3,
+    "ItemType": 3,
+    "ItemName": "Potion of Major Healing",
+    "SellPrice": 3,
+    "MarketPrice": 3000,
+    "ImagePath": "Item Art/Potions/Potion_Huge_Red"
+  },
+  {
+	"Effect": 0,
+	"Amount": 200,
+    "ID": 12,
+    "ItemRarity": 4,
+    "ItemType": 3,
+    "ItemName": "Potion of Super Healing",
+    "SellPrice": 3,
+    "MarketPrice": 5000,
+    "ImagePath": "Item Art/Potions/Potion_Epic_Red"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 2
+      }
+    ],
+    "LevelRequirement": 1,
+    "EquipmentType": 1,
+    "ID": 13,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Helmet of Minor Strength",
+    "SellPrice": 10,
+    "MarketPrice": 20,
+    "ImagePath": "Item Art/Equipment/helmets"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 2
+      }
+    ],
+    "LevelRequirement": 1,
+    "EquipmentType": 2,
+    "ID": 14,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Chainmail of Minor Protection",
+    "SellPrice": 10,
+    "MarketPrice": 20,
+    "ImagePath": "Item Art/Equipment/armor"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 2
+      }
+    ],
+    "LevelRequirement": 1,
+    "EquipmentType": 3,
+    "ID": 15,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Leggings of Minor Fencing",
+    "SellPrice": 10,
+    "MarketPrice": 20,
+    "ImagePath": "Item Art/Equipment/pants"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 2
+      }
+    ],
+    "LevelRequirement": 1,
+    "EquipmentType": 5,
+    "ID": 16,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Shield of Minor Protection",
+    "SellPrice": 10,
+    "MarketPrice": 20,
+    "ImagePath": "Item Art/Equipment/shield"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 4,
+        "statValue": 1
+      }
+    ],
+    "LevelRequirement": 1,
+    "EquipmentType": 6,
+    "ID": 17,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Earrings of Minor Strikes",
+    "SellPrice": 10,
+    "MarketPrice": 20,
+    "ImagePath": "Item Art/Equipment/Pendant_B"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 2
+      }
+    ],
+    "LevelRequirement": 1,
+    "EquipmentType": 8,
+    "ID": 18,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Bracelets of Minor Strength",
+    "SellPrice": 10,
+    "MarketPrice": 20,
+    "ImagePath": "Item Art/Equipment/bracers"
+  },
+  {
+    "equipmentStats": [      
+      {
+        "statType": 3,
+        "statValue": 4
+      },
+	  {
+        "statType": 1,
+        "statValue": 1
+      }
+    ],
+    "LevelRequirement": 5,
+    "EquipmentType": 0,
+    "ID": 19,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Sword of Lesser Power",
+    "SellPrice": 25,
+    "MarketPrice": 75,
+    "ImagePath": "Item Art/Equipment/sword2"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 5
+      }
+    ],
+    "LevelRequirement": 5,
+    "EquipmentType": 9,
+    "ID": 20,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Ring of Lesser Fencing",
+    "SellPrice": 25,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Equipment/rings"
+  },
+  {
+    "equipmentStats": [      
+	  {
+        "statType": 1,
+        "statValue": 5
+      }
+    ],
+    "LevelRequirement": 5,
+    "EquipmentType": 7,
+    "ID": 21,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Necklace of Lesser Strength",
+    "SellPrice": 25,
+    "MarketPrice": 75,
+    "ImagePath": "Item Art/Equipment/necklace"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 4
+      }
+    ],
+    "LevelRequirement": 5,
+    "EquipmentType": 1,
+    "ID": 22,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Helmet of Lesser Strength",
+    "SellPrice": 25,
+    "MarketPrice": 75,
+    "ImagePath": "Item Art/Equipment/helmets"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 5
+      }
+    ],
+    "LevelRequirement": 5,
+    "EquipmentType": 2,
+    "ID": 23,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Chainmail of Lesser Protection",
+    "SellPrice": 25,
+    "MarketPrice": 75,
+    "ImagePath": "Item Art/Equipment/armor"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 5
+      }
+    ],
+    "LevelRequirement": 5,
+    "EquipmentType": 3,
+    "ID": 24,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Leggings of Lesser Fencing",
+    "SellPrice": 25,
+    "MarketPrice": 75,
+    "ImagePath": "Item Art/Equipment/pants"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 5
+      }
+    ],
+    "LevelRequirement": 5,
+    "EquipmentType": 5,
+    "ID": 25,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Shield of Lesser Protection",
+    "SellPrice": 25,
+    "MarketPrice": 75,
+    "ImagePath": "Item Art/Equipment/shield"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 4,
+        "statValue": 2
+      }
+    ],
+    "LevelRequirement": 5,
+    "EquipmentType": 6,
+    "ID": 26,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Earrings of Lesser Strikes",
+    "SellPrice": 25,
+    "MarketPrice": 75,
+    "ImagePath": "Item Art/Equipment/Pendant_B"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 5
+      }
+    ],
+    "LevelRequirement": 5,
+    "EquipmentType": 8,
+    "ID": 27,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Bracelets of Lesser Strength",
+    "SellPrice": 25,
+    "MarketPrice": 75,
+    "ImagePath": "Item Art/Equipment/bracers"
+  },
+  {
+    "equipmentStats": [      
+      {
+        "statType": 3,
+        "statValue": 7
+      },
+	  {
+        "statType": 1,
+        "statValue": 4
+      }
+    ],
+    "LevelRequirement": 10,
+    "EquipmentType": 0,
+    "ID": 28,
+    "ItemRarity": 1,
+    "ItemType": 1,
+    "ItemName": "Sword of Power",
+    "SellPrice": 100,
+    "MarketPrice": 300,
+    "ImagePath": "Item Art/Equipment/sword2"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 9
+      }
+    ],
+    "LevelRequirement": 10,
+    "EquipmentType": 9,
+    "ID": 29,
+    "ItemRarity": 1,
+    "ItemType": 1,
+    "ItemName": "Ring of Fencing",
+    "SellPrice": 100,
+    "MarketPrice": 300,
+    "ImagePath": "Item Art/Equipment/rings"
+  },
+  {
+    "equipmentStats": [      
+	  {
+        "statType": 1,
+        "statValue": 9
+      }
+    ],
+    "LevelRequirement": 10,
+    "EquipmentType": 7,
+    "ID": 30,
+    "ItemRarity": 1,
+    "ItemType": 1,
+    "ItemName": "Necklace of Strength",
+    "SellPrice": 100,
+    "MarketPrice": 300,
+    "ImagePath": "Item Art/Equipment/necklace"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 9
+      }
+    ],
+    "LevelRequirement": 10,
+    "EquipmentType": 1,
+    "ID": 31,
+    "ItemRarity": 1,
+    "ItemType": 1,
+    "ItemName": "Helmet of Strength",
+    "SellPrice": 100,
+    "MarketPrice": 300,
+    "ImagePath": "Item Art/Equipment/helmets"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 9
+      }
+    ],
+    "LevelRequirement": 10,
+    "EquipmentType": 2,
+    "ID": 32,
+    "ItemRarity": 1,
+    "ItemType": 1,
+    "ItemName": "Chainmail of Protection",
+    "SellPrice": 100,
+    "MarketPrice": 300,
+    "ImagePath": "Item Art/Equipment/armor"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 9
+      }
+    ],
+    "LevelRequirement": 10,
+    "EquipmentType": 3,
+    "ID": 33,
+    "ItemRarity": 1,
+    "ItemType": 1,
+    "ItemName": "Leggings of Fencing",
+    "SellPrice": 100,
+    "MarketPrice": 300,
+    "ImagePath": "Item Art/Equipment/pants"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 9
+      }
+    ],
+    "LevelRequirement": 10,
+    "EquipmentType": 5,
+    "ID": 34,
+    "ItemRarity": 1,
+    "ItemType": 1,
+    "ItemName": "Shield of Protection",
+    "SellPrice": 100,
+    "MarketPrice": 300,
+    "ImagePath": "Item Art/Equipment/shield"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 4,
+        "statValue": 3
+      }
+    ],
+    "LevelRequirement": 10,
+    "EquipmentType": 6,
+    "ID": 35,
+    "ItemRarity": 1,
+    "ItemType": 1,
+    "ItemName": "Earrings of Strikes",
+    "SellPrice": 100,
+    "MarketPrice": 300,
+    "ImagePath": "Item Art/Equipment/Pendant_B"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 9
+      }
+    ],
+    "LevelRequirement": 10,
+    "EquipmentType": 8,
+    "ID": 36,
+    "ItemRarity": 1,
+    "ItemType": 1,
+    "ItemName": "Bracelets of Strength",
+    "SellPrice": 100,
+    "MarketPrice": 300,
+    "ImagePath": "Item Art/Equipment/bracers"
+  },
+  {
+    "equipmentStats": [      
+      {
+        "statType": 3,
+        "statValue": 14
+      },
+	  {
+        "statType": 1,
+        "statValue": 7
+      }
+    ],
+    "LevelRequirement": 15,
+    "EquipmentType": 0,
+    "ID": 37,
+    "ItemRarity": 2,
+    "ItemType": 1,
+    "ItemName": "Sword of Power",
+    "SellPrice": 300,
+    "MarketPrice": 1000,
+    "ImagePath": "Item Art/Equipment/sword2"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 16
+      }
+    ],
+    "LevelRequirement": 15,
+    "EquipmentType": 9,
+    "ID": 38,
+    "ItemRarity": 2,
+    "ItemType": 1,
+    "ItemName": "Ring of Fencing",
+    "SellPrice": 300,
+    "MarketPrice": 1000,
+    "ImagePath": "Item Art/Equipment/rings"
+  },
+  {
+    "equipmentStats": [      
+	  {
+        "statType": 1,
+        "statValue": 16
+      }
+    ],
+    "LevelRequirement": 15,
+    "EquipmentType": 7,
+    "ID": 39,
+    "ItemRarity": 2,
+    "ItemType": 1,
+    "ItemName": "Necklace of Strength",
+    "SellPrice": 300,
+    "MarketPrice": 1000,
+    "ImagePath": "Item Art/Equipment/necklace"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 16
+      }
+    ],
+    "LevelRequirement": 15,
+    "EquipmentType": 1,
+    "ID": 40,
+    "ItemRarity": 2,
+    "ItemType": 1,
+    "ItemName": "Helmet of Strength",
+    "SellPrice": 300,
+    "MarketPrice": 1000,
+    "ImagePath": "Item Art/Equipment/helmets"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 16
+      }
+    ],
+    "LevelRequirement": 15,
+    "EquipmentType": 2,
+    "ID": 41,
+    "ItemRarity": 2,
+    "ItemType": 1,
+    "ItemName": "Chainmail of Protection",
+    "SellPrice": 300,
+    "MarketPrice": 1000,
+    "ImagePath": "Item Art/Equipment/armor"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 16
+      }
+    ],
+    "LevelRequirement": 15,
+    "EquipmentType": 3,
+    "ID": 42,
+    "ItemRarity": 2,
+    "ItemType": 1,
+    "ItemName": "Leggings of Fencing",
+    "SellPrice": 300,
+    "MarketPrice": 1000,
+    "ImagePath": "Item Art/Equipment/pants"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 16
+      }
+    ],
+    "LevelRequirement": 15,
+    "EquipmentType": 5,
+    "ID": 43,
+    "ItemRarity": 2,
+    "ItemType": 1,
+    "ItemName": "Shield of Protection",
+    "SellPrice": 300,
+    "MarketPrice": 1000,
+    "ImagePath": "Item Art/Equipment/shield"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 4,
+        "statValue": 4
+      }
+    ],
+    "LevelRequirement": 15,
+    "EquipmentType": 6,
+    "ID": 44,
+    "ItemRarity": 2,
+    "ItemType": 1,
+    "ItemName": "Earrings of Strikes",
+    "SellPrice": 300,
+    "MarketPrice": 1000,
+    "ImagePath": "Item Art/Equipment/Pendant_B"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 16
+      }
+    ],
+    "LevelRequirement": 15,
+    "EquipmentType": 8,
+    "ID": 45,
+    "ItemRarity": 2,
+    "ItemType": 1,
+    "ItemName": "Bracelets of Strength",
+    "SellPrice": 300,
+    "MarketPrice": 1000,
+    "ImagePath": "Item Art/Equipment/bracers"
+  },
+  {
+    "equipmentStats": [      
+      {
+        "statType": 3,
+        "statValue": 21
+      },
+	  {
+        "statType": 1,
+        "statValue": 10
+      }
+    ],
+    "LevelRequirement": 20,
+    "EquipmentType": 0,
+    "ID": 46,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Sword of Major Power",
+    "SellPrice": 500,
+    "MarketPrice": 2000,
+    "ImagePath": "Item Art/Equipment/sword2"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 24
+      }
+    ],
+    "LevelRequirement": 20,
+    "EquipmentType": 9,
+    "ID": 47,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Ring of Major Fencing",
+    "SellPrice": 500,
+    "MarketPrice": 2000,
+    "ImagePath": "Item Art/Equipment/rings"
+  },
+  {
+    "equipmentStats": [      
+	  {
+        "statType": 1,
+        "statValue": 24
+      }
+    ],
+    "LevelRequirement": 20,
+    "EquipmentType": 7,
+    "ID": 48,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Necklace of Major Strength",
+    "SellPrice": 500,
+    "MarketPrice": 2000,
+    "ImagePath": "Item Art/Equipment/necklace"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 24
+      }
+    ],
+    "LevelRequirement": 20,
+    "EquipmentType": 1,
+    "ID": 49,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Helmet of Major Strength",
+    "SellPrice": 500,
+    "MarketPrice": 2000,
+    "ImagePath": "Item Art/Equipment/helmets"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 24
+      }
+    ],
+    "LevelRequirement": 20,
+    "EquipmentType": 2,
+    "ID": 50,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Chainmail of Major Protection",
+    "SellPrice": 500,
+    "MarketPrice": 2000,
+    "ImagePath": "Item Art/Equipment/armor"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 24
+      }
+    ],
+    "LevelRequirement": 20,
+    "EquipmentType": 3,
+    "ID": 51,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Leggings of Major Fencing",
+    "SellPrice": 500,
+    "MarketPrice": 2000,
+    "ImagePath": "Item Art/Equipment/pants"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 24
+      }
+    ],
+    "LevelRequirement": 20,
+    "EquipmentType": 5,
+    "ID": 52,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Shield of Major Protection",
+    "SellPrice": 500,
+    "MarketPrice": 2000,
+    "ImagePath": "Item Art/Equipment/shield"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 4,
+        "statValue": 5
+      }
+    ],
+    "LevelRequirement": 20,
+    "EquipmentType": 6,
+    "ID": 53,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Earrings of Major Strikes",
+    "SellPrice": 500,
+    "MarketPrice": 2000,
+    "ImagePath": "Item Art/Equipment/Pendant_B"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 24
+      }
+    ],
+    "LevelRequirement": 20,
+    "EquipmentType": 8,
+    "ID": 54,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Bracelets of Major Strength",
+    "SellPrice": 500,
+    "MarketPrice": 2000,
+    "ImagePath": "Item Art/Equipment/bracers"
+  },
+  {
+    "equipmentStats": [      
+      {
+        "statType": 3,
+        "statValue": 33
+      },
+	  {
+        "statType": 1,
+        "statValue": 15
+      }
+    ],
+    "LevelRequirement": 25,
+    "EquipmentType": 0,
+    "ID": 55,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Sword of Superior Power",
+    "SellPrice": 750,
+    "MarketPrice": 6000,
+    "ImagePath": "Item Art/Equipment/sword2"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 32
+      }
+    ],
+    "LevelRequirement": 25,
+    "EquipmentType": 9,
+    "ID": 56,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Ring of Superior Fencing",
+    "SellPrice": 750,
+    "MarketPrice": 6000,
+    "ImagePath": "Item Art/Equipment/rings"
+  },
+  {
+    "equipmentStats": [      
+	  {
+        "statType": 1,
+        "statValue": 32
+      }
+    ],
+    "LevelRequirement": 25,
+    "EquipmentType": 7,
+    "ID": 57,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Necklace of Superior Strength",
+    "SellPrice": 750,
+    "MarketPrice": 6000,
+    "ImagePath": "Item Art/Equipment/necklace"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 32
+      }
+    ],
+    "LevelRequirement": 25,
+    "EquipmentType": 1,
+    "ID": 58,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Helmet of Superior Strength",
+    "SellPrice": 750,
+    "MarketPrice": 6000,
+    "ImagePath": "Item Art/Equipment/helmets"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 32
+      }
+    ],
+    "LevelRequirement": 25,
+    "EquipmentType": 2,
+    "ID": 59,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Chainmail of Superior Protection",
+    "SellPrice": 750,
+    "MarketPrice": 6000,
+    "ImagePath": "Item Art/Equipment/armor"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 32
+      }
+    ],
+    "LevelRequirement": 25,
+    "EquipmentType": 3,
+    "ID": 60,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Leggings of Superior Fencing",
+    "SellPrice": 750,
+    "MarketPrice": 6000,
+    "ImagePath": "Item Art/Equipment/pants"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 32
+      }
+    ],
+    "LevelRequirement": 25,
+    "EquipmentType": 5,
+    "ID": 61,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Shield of Superior Protection",
+    "SellPrice": 750,
+    "MarketPrice": 6000,
+    "ImagePath": "Item Art/Equipment/shield"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 4,
+        "statValue": 6
+      }
+    ],
+    "LevelRequirement": 25,
+    "EquipmentType": 6,
+    "ID": 62,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Earrings of Superior Strikes",
+    "SellPrice": 750,
+    "MarketPrice": 6000,
+    "ImagePath": "Item Art/Equipment/Pendant_B"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 32
+      }
+    ],
+    "LevelRequirement": 25,
+    "EquipmentType": 8,
+    "ID": 63,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Bracelets of Superior Strength",
+    "SellPrice": 750,
+    "MarketPrice": 6000,
+    "ImagePath": "Item Art/Equipment/bracers"
+  },
+  {
+    "equipmentStats": [      
+      {
+        "statType": 3,
+        "statValue": 40
+      },
+	  {
+        "statType": 1,
+        "statValue": 22
+      }
+    ],
+    "LevelRequirement": 30,
+    "EquipmentType": 0,
+    "ID": 64,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Sword of Super Power",
+    "SellPrice": 1500,
+    "MarketPrice": 10000,
+    "ImagePath": "Item Art/Equipment/sword2"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 42
+      }
+    ],
+    "LevelRequirement": 30,
+    "EquipmentType": 9,
+    "ID": 65,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Ring of Super Fencing",
+    "SellPrice": 1500,
+    "MarketPrice": 10000,
+    "ImagePath": "Item Art/Equipment/rings"
+  },
+  {
+    "equipmentStats": [      
+	  {
+        "statType": 1,
+        "statValue": 42
+      }
+    ],
+    "LevelRequirement": 30,
+    "EquipmentType": 7,
+    "ID": 66,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Necklace of Super Strength",
+    "SellPrice": 1500,
+    "MarketPrice": 10000,
+    "ImagePath": "Item Art/Equipment/necklace"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 42
+      }
+    ],
+    "LevelRequirement": 30,
+    "EquipmentType": 1,
+    "ID": 67,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Helmet of Super Strength",
+    "SellPrice": 1500,
+    "MarketPrice": 10000,
+    "ImagePath": "Item Art/Equipment/helmets"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 42
+      }
+    ],
+    "LevelRequirement": 30,
+    "EquipmentType": 2,
+    "ID": 68,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Chainmail of Super Protection",
+    "SellPrice": 1500,
+    "MarketPrice": 10000,
+    "ImagePath": "Item Art/Equipment/armor"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 2,
+        "statValue": 42
+      }
+    ],
+    "LevelRequirement": 30,
+    "EquipmentType": 3,
+    "ID": 69,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Leggings of Super Fencing",
+    "SellPrice": 1500,
+    "MarketPrice": 10000,
+    "ImagePath": "Item Art/Equipment/pants"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 42
+      }
+    ],
+    "LevelRequirement": 30,
+    "EquipmentType": 5,
+    "ID": 70,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Shield of Super Protection",
+    "SellPrice": 1500,
+    "MarketPrice": 10000,
+    "ImagePath": "Item Art/Equipment/shield"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 4,
+        "statValue": 7
+      }
+    ],
+    "LevelRequirement": 30,
+    "EquipmentType": 6,
+    "ID": 71,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Earrings of Super Strikes",
+    "SellPrice": 1500,
+    "MarketPrice": 10000,
+    "ImagePath": "Item Art/Equipment/Pendant_B"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 1,
+        "statValue": 42
+      }
+    ],
+    "LevelRequirement": 30,
+    "EquipmentType": 8,
+    "ID": 72,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Bracelets of Super Strength",
+    "SellPrice": 1500,
+    "MarketPrice": 10000,
+    "ImagePath": "Item Art/Equipment/bracers"
+  },
+  {
+    "equipmentStats": [      
+      {
+        "statType": 3,
+        "statValue": 11
+      },
+	  {
+        "statType": 1,
+        "statValue": 7
+      },
+	  {
+        "statType": 4,
+        "statValue": 1
+      }
+    ],
+    "LevelRequirement": 10,
+    "EquipmentType": 0,
+    "ID": 73,
+    "ItemRarity": 4,
+    "ItemType": 1,
+    "ItemName": "Foestriker",
+    "SellPrice": 400,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Equipment/sword2"
+  },
+  {
+    "equipmentStats": [      
+      {
+        "statType": 3,
+        "statValue": 26
+      },
+	  {
+        "statType": 1,
+        "statValue": 13
+      },
+	  {
+        "statType": 4,
+        "statValue": 2
+      }
+    ],
+    "LevelRequirement": 20,
+    "EquipmentType": 0,
+    "ID": 74,
+    "ItemRarity": 4,
+    "ItemType": 1,
+    "ItemName": "Death's Embrace",
+    "SellPrice": 1500,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Equipment/sword2"
+  },
+  {
+    "equipmentStats": [      
+      {
+        "statType": 3,
+        "statValue": 70
+      },
+	  {
+        "statType": 1,
+        "statValue": 30
+      },
+	  {
+        "statType": 4,
+        "statValue": 5
+      }
+    ],
+    "LevelRequirement": 30,
+    "EquipmentType": 0,
+    "ID": 75,
+    "ItemRarity": 4,
+    "ItemType": 1,
+    "ItemName": "Annihilation",
+    "SellPrice": 10000,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Equipment/sword2"
+  },
+  {
+    "ID": 76,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Rotten Brain",
+    "SellPrice": 3,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 77,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Severed Hand",
+    "SellPrice": 5,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 78,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Spider Eye",
+    "SellPrice": 3,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 79,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Poison Gland",
+    "SellPrice": 5,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 76,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Smelly Clothing",
+    "SellPrice": 7,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 77,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Zombie Toenail",
+    "SellPrice": 10,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 78,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Spider Leg",
+    "SellPrice": 7,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 79,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Spider Hair",
+    "SellPrice": 10,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 80,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Skeleton Fingers",
+    "SellPrice": 7,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 81,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Ribcage",
+    "SellPrice": 10,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 2
+      },
+	  {
+        "statType": 3,
+        "statValue": 3
+      }
+    ],
+    "LevelRequirement": 5,
+    "EquipmentType": 4,
+    "ID": 82,
+    "ItemRarity": 0,
+    "ItemType": 1,
+    "ItemName": "Boots of Lesser Power",
+    "SellPrice": 25,
+    "MarketPrice": 75,
+    "ImagePath": "Item Art/Equipment/boots"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 3
+      },
+	  {
+        "statType": 3,
+        "statValue": 6
+      }
+    ],
+    "LevelRequirement": 10,
+    "EquipmentType": 4,
+    "ID": 83,
+    "ItemRarity": 1,
+    "ItemType": 1,
+    "ItemName": "Boots of Power",
+    "SellPrice": 100,
+    "MarketPrice": 300,
+    "ImagePath": "Item Art/Equipment/boots"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 6
+      },
+	  {
+        "statType": 3,
+        "statValue": 10
+      }
+    ],
+    "LevelRequirement": 15,
+    "EquipmentType": 4,
+    "ID": 84,
+    "ItemRarity": 2,
+    "ItemType": 1,
+    "ItemName": "Boots of Power",
+    "SellPrice": 300,
+    "MarketPrice": 1000,
+    "ImagePath": "Item Art/Equipment/boots"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 8
+      },
+	  {
+        "statType": 3,
+        "statValue": 16
+      }
+    ],
+    "LevelRequirement": 20,
+    "EquipmentType": 4,
+    "ID": 85,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Boots of Major Power",
+    "SellPrice": 500,
+    "MarketPrice": 2000,
+    "ImagePath": "Item Art/Equipment/boots"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 12
+      },
+	  {
+        "statType": 3,
+        "statValue": 20
+      }
+    ],
+    "LevelRequirement": 25,
+    "EquipmentType": 4,
+    "ID": 86,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Boots of Superior Power",
+    "SellPrice": 750,
+    "MarketPrice": 6000,
+    "ImagePath": "Item Art/Equipment/boots"
+  },
+  {
+    "equipmentStats": [
+      {
+        "statType": 0,
+        "statValue": 16
+      },
+	  {
+        "statType": 3,
+        "statValue": 26
+      }
+    ],
+    "LevelRequirement": 30,
+    "EquipmentType": 4,
+    "ID": 87,
+    "ItemRarity": 3,
+    "ItemType": 1,
+    "ItemName": "Boots of Super Power",
+    "SellPrice": 1500,
+    "MarketPrice": 10000,
+    "ImagePath": "Item Art/Equipment/boots"
+  },
+  {
+    "ID": 88,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Ruined Spellbook",
+    "SellPrice": 10,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 89,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Summoning Powder",
+    "SellPrice": 12,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 90,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Batwing",
+    "SellPrice": 10,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 91,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Batfang",
+    "SellPrice": 12,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 92,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Dripping Eye",
+    "SellPrice": 10,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 93,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Tendrill",
+    "SellPrice": 12,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 94,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Demon Wing",
+    "SellPrice": 20,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 95,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Demon Horn",
+    "SellPrice": 30,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 96,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Demon Blade",
+    "SellPrice": 20,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 97,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Demonic Blood",
+    "SellPrice": 30,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 98,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Demon Armor",
+    "SellPrice": 20,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 99,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Demonic Whip",
+    "SellPrice": 30,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 100,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Blue Slimeball",
+    "SellPrice": 40,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 101,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Slime Heart",
+    "SellPrice": 50,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 102,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Green Slimeball",
+    "SellPrice": 40,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 103,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Kobold Ear",
+    "SellPrice": 50,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 104,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Kobold Loincloth",
+    "SellPrice": 40,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 105,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Demon Tendrill",
+    "SellPrice": 70,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  },
+  {
+    "ID": 106,
+    "ItemRarity": 0,
+    "ItemType": 0,
+    "ItemName": "Demon Rucksack",
+    "SellPrice": 80,
+    "MarketPrice": 0,
+    "ImagePath": "Item Art/Presents/Present_A"
+  }
+]
