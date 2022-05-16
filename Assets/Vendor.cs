@@ -15,6 +15,11 @@ public class Vendor : MonoBehaviour
         {
             return;
         }
+        if(vendorUI == null)
+        {
+            vendorUI = UIManager.Instance.vendorUI.GetComponent<VendorUI>();
+        }
+
         vendorUI.Init(itemsForSale, this);
         ShowShop();
         PlayerManager.Instance.isInRangeOfShop = true;

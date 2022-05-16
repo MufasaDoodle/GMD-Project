@@ -241,7 +241,7 @@ MonoBehaviour:
   maxHealth: 1000
   attackDamage: 120
   knockbackPower: 20
-  xpMultiplierFactor: 30
+  xpMultiplierFactor: 100
   enemyHealthUI: {fileID: 9070111786525673194}
 --- !u!114 &9070111785482750049
 MonoBehaviour:

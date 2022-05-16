@@ -36,6 +36,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (state == EnemyAIState.Resetting) //enemy will return to starting position before trying to follow a player again
         {
             CheckIfAtStartingPosition();

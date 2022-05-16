@@ -79,8 +79,7 @@ public class GameSettingsManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        Save();
-        SceneManager.LoadScene("MainMenu");
+        DisableUI();
     }
 
     private void Save()

@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject equipmentPanel;
     public GameObject inventoryPanel;
     public EntityDamageNumber EntityDamageNumber;
+    public GameObject vendorUI;
 
     // Start is called before the first frame update
     void Start()

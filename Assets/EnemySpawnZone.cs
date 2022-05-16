@@ -10,19 +10,18 @@ public class EnemySpawnZone : MonoBehaviour
     public Vector2 boundries;
 
     bool isCurrentlySpawning = false;
+    bool hasStarted = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < maxAmountOfEnemies; i++)
-        {
-            SpawnEnemy();
-        }
+        StartCoroutine(DelayedStart());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!hasStarted) return;
         CheckToRespawnEnemy();
     }
 
@@ -43,7 +42,8 @@ public class EnemySpawnZone : MonoBehaviour
             (Random.value - 0.5f) * boundries.x,
             (Random.value - 0.5f) * boundries.y
             );
-        Instantiate(enemyToSpawnPrefab, posToSpawnAt, Quaternion.identity, transform);
+        var go = Instantiate(enemyToSpawnPrefab, posToSpawnAt, Quaternion.identity, transform);
+        go.transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
     private void OnDrawGizmosSelected()
@@ -58,5 +58,15 @@ public class EnemySpawnZone : MonoBehaviour
         yield return new WaitForSeconds(secondsToSpawn);
         SpawnEnemy();
         isCurrentlySpawning = false;
+    }
+
+    IEnumerator DelayedStart()
+    {
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < maxAmountOfEnemies; i++)
+        {
+            SpawnEnemy();
+        }
+        hasStarted = true;
     }
 }

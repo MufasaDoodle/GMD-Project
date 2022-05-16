@@ -9,7 +9,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnPlayPressed()
     {
-        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+        SceneManager.LoadScene("Loading", LoadSceneMode.Single);
     }
 
     public void OnExitPressed()

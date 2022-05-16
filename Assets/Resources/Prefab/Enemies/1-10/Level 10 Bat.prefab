@@ -117,7 +117,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -105541197
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 189690403, guid: 3dc503b9622664e46afd054895fc0f5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   maxHealth: 100
   attackDamage: 30
   knockbackPower: 20
-  xpMultiplierFactor: 1
+  xpMultiplierFactor: 3.5
   enemyHealthUI: {fileID: 9070111786525673194}
 --- !u!114 &9070111785482750049
 MonoBehaviour:
