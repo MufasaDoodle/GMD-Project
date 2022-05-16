@@ -3,7 +3,7 @@ Unity project for GMD course
 
 
 Youtube demonstration: 
- - 
+ - https://www.youtube.com/watch?v=IObLhBuzVe0
 
 If you want to play the game yourself
  - Make sure to follow the last part of the above YouTube link in order for the game to work on your computer
